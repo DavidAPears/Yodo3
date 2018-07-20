@@ -1,0 +1,44 @@
+<p class="pageHeader">User details</p>
+
+<br>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Credit</th>
+        </tr>
+        <tr>
+            <td>$user.getUsername()</td>
+            <td>$user.getCredit()</td>
+            <td>
+                <form action="/users/$user.getId()/edit">
+                    <input type="image" src="/images/edit_icon.jpg" height="30rem">
+                </form>
+            </td>
+            <td>
+                <form action="/users/$user.getId()/delete" method="post">
+                    <input type="image" src="/images/delete_icon.png" height="30rem">
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br>
+
+<p class="pageHeader">$user.getUsername()'s current listed adverts:</p>
+<div class="container">
+    <table>
+        #foreach ($advert in $adverts)
+        <tr>
+            <td>
+                <a href="/adverts/$advert.getId()">$advert.getTitle()</a>
+            </td>
+        </tr>
+        #end
+    </table>
+</div>
+Message Input
+
+Message @David Pears

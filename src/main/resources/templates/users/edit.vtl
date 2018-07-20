@@ -1,0 +1,12 @@
+<p class="pageHeader">Edit user</p>
+
+<form action="/users/$user.getId()" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required value="$user.getUsername()">
+
+    <label for="credit">Credit:</label>
+    <input type="text" id="credit" name="credit" required value="$user.getCredit()">
+
+    <input type="image" src="/images/okay_icon.png" height="30rem">
+
+</form>

@@ -1,0 +1,33 @@
+<p class="pageHeader">All Users</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Credit</th>
+        </tr>
+        #foreach ($user in $users)
+        <tr>
+            <td><a href="/users/$user.getId()">$user.getUsername()</a></td>
+            <td>$user.getCredit()</td>
+            <td>
+                <form action="/users/$user.getId()/edit">
+                    <input type="image" src="/images/edit_icon.jpg" height="30rem">
+                </form>
+            </td>
+            <td>
+                <form action="/users/$user.getId()/delete" method="post">
+                    <input type="image" src="/images/delete_icon.png" height="30rem">
+                </form>
+            </td>
+        </tr>
+        #end
+    </table>
+</div>
+
+<br>
+<br>
+
+<form action="/users/new">
+    <input type="image" src="/images/add_icon.png" height="30rem">
+</form>

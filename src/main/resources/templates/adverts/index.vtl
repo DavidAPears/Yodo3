@@ -1,0 +1,20 @@
+<p class="pageHeader">All Adverts</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <!--<th>id</th>-->
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+        #foreach ($advert in $adverts)
+        <tr>
+            <!--<td><a href="/users/$user.getId()">$user.getId()</a></td>-->
+            <td>$user.getTitle()</td>
+            <td>$user.getDescription()</td>
+            <td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+        </tr>
+        #end
+    </table>
+</div>

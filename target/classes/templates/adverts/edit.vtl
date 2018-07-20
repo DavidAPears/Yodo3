@@ -1,0 +1,29 @@
+<h1>Edit Advert</h1>
+
+<form action="/adverts/$advert.getId()" method="post">
+
+    <label for="title">Title</label>
+    <input type="inputbox" id="title" name="title" required="true" value="$advert.getTitle()">
+
+    <label for="description">Description</label>
+    <input type="inputbox" id="description" name="description" required="true" value="$advert.getDescription()">
+
+    <label for="price">Price</label>
+    <input type="inputbox" id="price" name="price" required="true" value="$advert.getPrice()">
+
+    <label for="category">Category</label>
+    <input type="inputbox" id="category" name="category" required="true" value="$advert.getCategory()">
+
+    <label for="imageUrl">imageUrl</label>
+    <input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$advert.getImageUrl()">
+
+    <label for="user">User</label>
+    <input type="inputbox" id="user" name="user" required="true" value="$advert.getUser()">
+
+    <input type="submit" value="Save">
+
+
+</form>
+Message Input
+
+Message @David Pears
