@@ -20,12 +20,14 @@ import static spark.SparkBase.staticFileLocation;
 public class UsersController {
 
     public static void main(String[] args) {
+//        using 9000 because 4567 not working
         port(9000);
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
         staticFileLocation("/public");
 
         Seeds.seedData();
 
+        AdvertsController advertsController = new AdvertsController();
 //        ComputerGamesController computerGamesController = new ComputerGamesController();
 
 
