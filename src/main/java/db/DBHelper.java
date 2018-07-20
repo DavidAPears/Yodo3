@@ -119,10 +119,16 @@ public class DBHelper {
 
     public static <T> T find(int id, Class classType) {
         session = HibernateUtil.getSessionFactory().openSession();
-        Criteria cr = session.createCriteria(classType);
-        cr.add(Restrictions.eq("id", id));
+        Criteria cr = null;
+        try {
+            cr = session.createCriteria(classType);
+            cr.add(Restrictions.eq("id", id));
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
         return getUnique(cr);
-
     }
 
 }

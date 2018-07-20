@@ -2,6 +2,7 @@ package controllers;
 
 import db.DBHelper;
 import models.Book;
+import models.User;
 import models.enums.Format;
 import models.enums.Genre;
 import spark.ModelAndView;
@@ -34,6 +35,8 @@ public class BooksController {
         get("/books/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/books/create.vtl");
+            List<User> users = DBHelper.getAll(User.class);
+            model.put("users", users);
             List<Genre> genres = Arrays.asList(Genre.values());
             model.put("genres", genres);
             List<Format> formats = Arrays.asList(Format.values());
@@ -50,14 +53,20 @@ public class BooksController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-//        post("/books", (req, res) -> {
-//            String bookname = req.queryParams("bookname");
-//            int credit = Integer.valueOf(req.queryParams("credit"));
-//            Book newBook = new Book(bookname, credit);
-//            DBHelper.save(newBook);
-//            res.redirect("/books");
-//            return null;
-//        }, new VelocityTemplateEngine());
+        post("/books", (req, res) -> {
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            int price = Integer.valueOf(req.queryParams("price"));
+            String imageUrl = req.queryParams("imageUrl");
+            int userId = Integer.valueOf(req.queryParams("user"));
+            User user = DBHelper.find(userId, User.class);
+            Genre genre = Genre.valueOf(req.queryParams("genre"));
+            Format format = Format.valueOf(req.queryParams("format"));
+            Book newBook = new Book(title, description, price, imageUrl, user, genre, format);
+            DBHelper.save(newBook);
+            res.redirect("/books");
+            return null;
+        }, new VelocityTemplateEngine());
 
         get("books/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

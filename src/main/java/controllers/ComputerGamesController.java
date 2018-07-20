@@ -5,6 +5,7 @@ import db.DBHelper;
 import models.Advert;
 import models.ComputerGame;
 import models.ComputerGame;
+import models.User;
 import models.enums.*;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -38,7 +39,8 @@ public class ComputerGamesController {
         get("/computergames/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/computergames/create.vtl");
-
+            List<User> users = DBHelper.getAll(User.class);
+            model.put("users", users);
             List<Console> consoles = Arrays.asList(Console.values());
             model.put("consoles", consoles);
             List<AgeClassification> ageClassifications = Arrays.asList(AgeClassification.values());
@@ -58,14 +60,21 @@ public class ComputerGamesController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-//        post("/computergames", (req, res) -> {
-//            String computerGamename = req.queryParams("computerGamename");
-//            int credit = Integer.valueOf(req.queryParams("credit"));
-//            ComputerGame newComputerGame = new ComputerGame(computerGamename, credit);
-//            DBHelper.save(newComputerGame);
-//            res.redirect("/computergames");
-//            return null;
-//        }, new VelocityTemplateEngine());
+        post("/computergames", (req, res) -> {
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            int price = Integer.valueOf(req.queryParams("price"));
+            String imageUrl = req.queryParams("imageUrl");
+            int userId = Integer.valueOf(req.queryParams("user"));
+            User user = DBHelper.find(userId, User.class);
+            Console console = Console.valueOf(req.queryParams("console"));
+            AgeClassification ageClassification = AgeClassification.valueOf(req.queryParams("ageClassification"));
+            GameType gameType = GameType.valueOf(req.queryParams("gameType"));
+            ComputerGame newComputerGame = new ComputerGame(title, description, price, imageUrl, user, console, ageClassification, gameType);
+            DBHelper.save(newComputerGame);
+            res.redirect("/computergames");
+            return null;
+        }, new VelocityTemplateEngine());
 
         get("computergames/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

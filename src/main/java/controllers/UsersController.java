@@ -41,16 +41,11 @@ public class UsersController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-        get("/hello", (request, response) -> "Hello World!!");
-
-
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/home.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
-
-
 
         get("/users/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
