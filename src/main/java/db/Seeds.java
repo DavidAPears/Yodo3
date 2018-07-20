@@ -52,7 +52,7 @@ public class Seeds {
         Bicycle bicycle3 = new Bicycle("Black bike", "Apollo bike with 12 gears", 30, "url8", user5, 20, 7, 9);
         DBHelper.save(bicycle3);
 
-        Book book1 = new Book("Harry Potter and the Philosopher's Stone", "Book by J. K. Rowling", 5, "url9", user6, Genre.FANTASY, Format.HARDBACK);
+        Book book1 = new Book("Harry Potter and the Philosopher's Stone", "Book by J. K. Rowling", 5, "/images/harrypotter.jpeg", user6, Genre.FANTASY, Format.HARDBACK);
         DBHelper.save(book1);
 
         BoardGame boardGame1 = new BoardGame("Catan", "Catan board game, good condition", 12, "url10", user7, GameType.STRATEGY);

@@ -53,11 +53,11 @@ public class UsersController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-        get("users/:id", (req, res) -> {
+        get("/users/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/users/show.vtl");
             int userId = Integer.parseInt(req.params(":id"));
-            User user = DBHelper.find(userId, User.class);
+            User user = DBUser.find(userId);
             model.put("user", user);
             List<Advert> adverts = DBUser.getAdvertsForUser(user);
             model.put("adverts", adverts);
@@ -73,10 +73,10 @@ public class UsersController {
             return null;
         }, new VelocityTemplateEngine());
 
-        get("users/:id/edit", (req, res) -> {
+        get("/users/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int userId = Integer.parseInt(req.params(":id"));
-            User user = DBHelper.find(userId, User.class);
+            User user = DBUser.find(userId);
             model.put("user", user);
             model.put("template", "templates/users/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
@@ -87,7 +87,7 @@ public class UsersController {
             String username = req.queryParams("username");
             int credit = Integer.valueOf(req.queryParams("credit"));
             int userId = Integer.parseInt(req.params(":id"));
-            User user = DBHelper.find(userId, User.class);
+            User user = DBUser.find(userId);
             user.setUsername(username);
             user.setCredit(credit);
             DBHelper.update(user);
@@ -97,7 +97,7 @@ public class UsersController {
 
         post("/users/:id/delete", (req, res) -> {
             int userId = Integer.parseInt(req.params(":id"));
-            User user = DBHelper.find(userId, User.class);
+            User user = DBUser.find(userId);
             DBHelper.delete(user);
             res.redirect("/users");
             return null;

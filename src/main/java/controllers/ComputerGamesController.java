@@ -1,7 +1,9 @@
 package controllers;
 
+import db.DBComputerGame;
 import db.DBHelper;
 
+import db.DBUser;
 import models.Advert;
 import models.ComputerGame;
 import models.ComputerGame;
@@ -55,7 +57,7 @@ public class ComputerGamesController {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/computergames/show.vtl");
             int computerGameId = Integer.parseInt(req.params(":id"));
-            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
+            ComputerGame computerGame = DBComputerGame.find(computerGameId);
             model.put("computerGame", computerGame);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
@@ -66,7 +68,7 @@ public class ComputerGamesController {
             int price = Integer.valueOf(req.queryParams("price"));
             String imageUrl = req.queryParams("imageUrl");
             int userId = Integer.valueOf(req.queryParams("user"));
-            User user = DBHelper.find(userId, User.class);
+            User user = DBUser.find(userId);
             Console console = Console.valueOf(req.queryParams("console"));
             AgeClassification ageClassification = AgeClassification.valueOf(req.queryParams("ageClassification"));
             GameType gameType = GameType.valueOf(req.queryParams("gameType"));
@@ -79,7 +81,7 @@ public class ComputerGamesController {
         get("computergames/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int computerGameId = Integer.parseInt(req.params(":id"));
-            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
+            ComputerGame computerGame = DBComputerGame.find(computerGameId);
             model.put("computerGame", computerGame);
             model.put("template", "templates/computergames/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
@@ -90,7 +92,7 @@ public class ComputerGamesController {
 //            String computerGamename = req.queryParams("computerGamename");
 //            int credit = Integer.valueOf(req.queryParams("credit"));
 //            int computerGameId = Integer.parseInt(req.params(":id"));
-//            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
+//            ComputerGame computerGame = DBComputerGame.find(computerGameId);
 //            computerGame.setComputerGamename(computerGamename);
 //            computerGame.setCredit(credit);
 //            DBHelper.update(computerGame);
@@ -100,7 +102,7 @@ public class ComputerGamesController {
 
         post("/computergames/:id/delete", (req, res) -> {
             int computerGameId = Integer.parseInt(req.params(":id"));
-            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
+            ComputerGame computerGame = DBComputerGame.find(computerGameId);
             DBHelper.delete(computerGame);
             res.redirect("/computergames");
             return null;

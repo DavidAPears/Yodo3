@@ -16,7 +16,7 @@
             <td><a href="/books/$book.getId()">$book.getTitle()</a></td>
             <td>$book.getDescription()</td>
             <td>$book.getPrice()</td>
-            <td><a href="/books/$book.getId()"><img src="/images/harrypotter.jpeg" alt="Harry Potter and the Philosopher's Stone book cover picture" height="50rem"></a></td>
+            <td><a href="/books/$book.getId()"><img src="$book.getImageUrl()" alt="Image: $book.getTitle()" height="50rem"></a></td>
             <td><a href="users/$book.getUser().getId()">$book.getUser().getUsername()</a></td>
             <td>$book.getGenre()</td>
             <td>$book.getFormat()</td>

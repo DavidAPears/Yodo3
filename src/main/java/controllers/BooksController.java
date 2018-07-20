@@ -1,6 +1,8 @@
 package controllers;
 
+import db.DBBook;
 import db.DBHelper;
+import db.DBUser;
 import models.Book;
 import models.User;
 import models.enums.Format;
@@ -48,7 +50,7 @@ public class BooksController {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/books/show.vtl");
             int bookId = Integer.parseInt(req.params(":id"));
-            Book book = DBHelper.find(bookId, Book.class);
+            Book book = DBBook.find(bookId);
             model.put("book", book);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
@@ -59,7 +61,7 @@ public class BooksController {
             int price = Integer.valueOf(req.queryParams("price"));
             String imageUrl = req.queryParams("imageUrl");
             int userId = Integer.valueOf(req.queryParams("user"));
-            User user = DBHelper.find(userId, User.class);
+            User user = DBUser.find(userId);
             Genre genre = Genre.valueOf(req.queryParams("genre"));
             Format format = Format.valueOf(req.queryParams("format"));
             Book newBook = new Book(title, description, price, imageUrl, user, genre, format);
@@ -71,7 +73,7 @@ public class BooksController {
         get("books/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int bookId = Integer.parseInt(req.params(":id"));
-            Book book = DBHelper.find(bookId, Book.class);
+            Book book = DBBook.find(bookId);
             model.put("book", book);
             model.put("template", "templates/books/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
@@ -92,7 +94,7 @@ public class BooksController {
 
         post("/books/:id/delete", (req, res) -> {
             int bookId = Integer.parseInt(req.params(":id"));
-            Book book = DBHelper.find(bookId, Book.class);
+            Book book = DBBook.find(bookId);
             DBHelper.delete(book);
             res.redirect("/books");
             return null;

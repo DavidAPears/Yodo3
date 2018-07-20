@@ -28,4 +28,19 @@ public class DBUser {
         return adverts;
     }
 
+    public static User find(int id) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        User user = null;
+        try {
+            Criteria cr = session.createCriteria(User.class);
+            cr.add(Restrictions.eq("id", id));
+            user = (User) cr.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return user;
+    }
+
 }
