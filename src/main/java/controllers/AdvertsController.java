@@ -1,6 +1,5 @@
 package controllers;
 
-
 import db.DBHelper;
 import models.Advert;
 import models.User;
@@ -14,7 +13,6 @@ import java.util.Map;
 import static spark.Spark.get;
 
 public class AdvertsController {
-
 
     public AdvertsController() {
         this.setupEndpoints();

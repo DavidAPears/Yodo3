@@ -30,6 +30,7 @@ public class UsersController {
         AdvertsController advertsController = new AdvertsController();
         BooksController booksController = new BooksController();
         ComputerGamesController computerGamesController = new ComputerGamesController();
+        BicyclesController bicyclesController = new BicyclesController();
 
 
         get("/users", (req, res) -> {

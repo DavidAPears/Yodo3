@@ -1,0 +1,29 @@
+<p class="pageHeader">All Bicycles</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>User</th>
+            <th>Wheel-size</th>
+            <th>Age-Range</th>
+        </tr>
+        #foreach ($bicycle in $bicycles)
+        <tr>
+            <td>$bicycle.getTitle()</td>
+            <td>$bicycle.getDescription()</td>
+            <td>$bicycle.getPrice()</td>
+            <td>$bicycle.getImageUrl()</td>
+            <td>$bicycle.getUser().getUsername()</td>
+            <td>$bicycle.getWheelSize()</td>
+            <td>$bicycle.getMinAge()-$bicycle.getMaxAge()</td>
+
+            <td><form action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+        </tr>
+        #end
+    </table>
+</div>

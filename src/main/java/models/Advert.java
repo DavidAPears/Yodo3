@@ -4,9 +4,11 @@ import models.enums.Category;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "adverts")
 @Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="advert_category")
 public class Advert {
 
