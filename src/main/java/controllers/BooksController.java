@@ -1,10 +1,9 @@
 package controllers;
 
 import db.DBHelper;
-
-import models.Advert;
-import models.ComputerGame;
-import models.ComputerGame;
+import models.Book;
+import models.enums.Format;
+import models.enums.Genre;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -15,75 +14,77 @@ import java.util.Map;
 import static spark.Spark.get;
 import static spark.Spark.post;
 
-public class ComputerGamesController {
+public class BooksController {
 
-    public ComputerGamesController() { this.setupEndpoints(); }
+    public BooksController() { this.setupEndpoints(); }
 
     private void setupEndpoints () {
 
 //        VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
 
-        get("/computergames", (req, res) -> {
+        get("/books", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("template", "/templates/computergames/index.vtl");
-            List<ComputerGame> computerGames = DBHelper.getAll(ComputerGame.class);
-            model.put("computergames", computerGames);
+            model.put("template", "/templates/books/index.vtl");
+            List<Book> book = DBHelper.getAll(Book.class);
+            model.put("books", book);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-        get("/hi", (request, response) -> "Hello World!!");
-
-        get("/computergames/new", (req, res) -> {
+        get("/books/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("template", "templates/computergames/create.vtl");
+            model.put("template", "templates/books/create.vtl");
+            List<Genre> genres = DBHelper.getAll(Genre.class);
+            model.put("genres", genres);
+            List<Format> formats = DBHelper.getAll(Format.class);
+            model.put("formats", formats);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-        get("computergames/:id", (req, res) -> {
+        get("books/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("template", "templates/computergames/show.vtl");
+            model.put("template", "templates/books/show.vtl");
             int computerGameId = Integer.parseInt(req.params(":id"));
-            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
+            Book computerGame = DBHelper.find(computerGameId, Book.class);
             model.put("computerGame", computerGame);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-//        post("/computergames", (req, res) -> {
+//        post("/books", (req, res) -> {
 //            String computerGamename = req.queryParams("computerGamename");
 //            int credit = Integer.valueOf(req.queryParams("credit"));
-//            ComputerGame newComputerGame = new ComputerGame(computerGamename, credit);
-//            DBHelper.save(newComputerGame);
-//            res.redirect("/computergames");
+//            Book newBook = new Book(computerGamename, credit);
+//            DBHelper.save(newBook);
+//            res.redirect("/books");
 //            return null;
 //        }, new VelocityTemplateEngine());
 
-        get("computergames/:id/edit", (req, res) -> {
+        get("books/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int computerGameId = Integer.parseInt(req.params(":id"));
-            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
+            Book computerGame = DBHelper.find(computerGameId, Book.class);
             model.put("computerGame", computerGame);
-            model.put("template", "templates/computergames/edit.vtl");
+            model.put("template", "templates/books/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-//        post("/computergames/:id", (req, res) -> {
+//        post("/books/:id", (req, res) -> {
 ////            Map<String, Object> model = new HashMap<>();
 //            String computerGamename = req.queryParams("computerGamename");
 //            int credit = Integer.valueOf(req.queryParams("credit"));
 //            int computerGameId = Integer.parseInt(req.params(":id"));
-//            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
-//            computerGame.setComputerGamename(computerGamename);
+//            Book computerGame = DBHelper.find(computerGameId, Book.class);
+//            computerGame.setBookname(computerGamename);
 //            computerGame.setCredit(credit);
 //            DBHelper.update(computerGame);
-//            res.redirect("/computergames");
+//            res.redirect("/books");
 //            return null;
 //        }, new VelocityTemplateEngine());
 
-        post("/computergames/:id/delete", (req, res) -> {
+        post("/books/:id/delete", (req, res) -> {
             int computerGameId = Integer.parseInt(req.params(":id"));
-            ComputerGame computerGame = DBHelper.find(computerGameId, ComputerGame.class);
+            Book computerGame = DBHelper.find(computerGameId, Book.class);
             DBHelper.delete(computerGame);
-            res.redirect("/computergames");
+            res.redirect("/books");
             return null;
         }, new VelocityTemplateEngine());
 

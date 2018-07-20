@@ -1,0 +1,41 @@
+<p class="pageHeader">All computer games</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>[image]</th>
+            <th>Seller</th>
+            <th>Console</th>
+            <th>Age classification</th>
+            <th>Game Type</th>
+        </tr>
+        #foreach ($computerGame in $computergames)
+        <tr>
+            <td>$computerGame.getTitle()</td>
+            <td>$computerGame.getDescription()</td>
+            <td>$computerGame.getPrice()</td>
+            <td>$computerGame.getImageUrl()</td>
+            <td><a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></td>
+            <td>$computerGame.getConsole()</td>
+            <td>$computerGame.getAgeClassification()</td>
+            <td>$computerGame.getGameType()</td>
+            <td><form action="/computergames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/computergames/$computerGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+        </tr>
+        #end
+    </table>
+</div>
+
+
+<!--ComputerGame computerGame1 = new ComputerGame(-->
+<!--"Sonic the Hedgehog", -->
+<!--"1991 Sega game", -->
+<!--5, -->
+<!--"url1", -->
+<!--user1, -->
+<!--Console.SEGA_GENESIS, -->
+<!--AgeClassification.THREE, -->
+<!--GameType.ACTION);-->
