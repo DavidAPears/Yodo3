@@ -5,9 +5,11 @@ import db.DBHelper;
 import models.Advert;
 import models.ComputerGame;
 import models.ComputerGame;
+import models.enums.*;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +38,14 @@ public class ComputerGamesController {
         get("/computergames/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/computergames/create.vtl");
+
+            List<Console> consoles = Arrays.asList(Console.values());
+            model.put("consoles", consoles);
+            List<AgeClassification> ageClassifications = Arrays.asList(AgeClassification.values());
+            model.put("ageClassifications", ageClassifications);
+            List<GameType> gameTypes = Arrays.asList(GameType.values());
+            model.put("gameTypes", gameTypes);
+
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 

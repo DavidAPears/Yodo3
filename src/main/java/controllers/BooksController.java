@@ -7,6 +7,7 @@ import models.enums.Genre;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,9 +34,9 @@ public class BooksController {
         get("/books/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/books/create.vtl");
-            List<Genre> genres = DBHelper.getAll(Genre.class);
+            List<Genre> genres = Arrays.asList(Genre.values());
             model.put("genres", genres);
-            List<Format> formats = DBHelper.getAll(Format.class);
+            List<Format> formats = Arrays.asList(Format.values());
             model.put("formats", formats);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
@@ -43,16 +44,16 @@ public class BooksController {
         get("books/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/books/show.vtl");
-            int computerGameId = Integer.parseInt(req.params(":id"));
-            Book computerGame = DBHelper.find(computerGameId, Book.class);
-            model.put("computerGame", computerGame);
+            int bookId = Integer.parseInt(req.params(":id"));
+            Book book = DBHelper.find(bookId, Book.class);
+            model.put("book", book);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
 //        post("/books", (req, res) -> {
-//            String computerGamename = req.queryParams("computerGamename");
+//            String bookname = req.queryParams("bookname");
 //            int credit = Integer.valueOf(req.queryParams("credit"));
-//            Book newBook = new Book(computerGamename, credit);
+//            Book newBook = new Book(bookname, credit);
 //            DBHelper.save(newBook);
 //            res.redirect("/books");
 //            return null;
@@ -60,30 +61,30 @@ public class BooksController {
 
         get("books/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int computerGameId = Integer.parseInt(req.params(":id"));
-            Book computerGame = DBHelper.find(computerGameId, Book.class);
-            model.put("computerGame", computerGame);
+            int bookId = Integer.parseInt(req.params(":id"));
+            Book book = DBHelper.find(bookId, Book.class);
+            model.put("book", book);
             model.put("template", "templates/books/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
 //        post("/books/:id", (req, res) -> {
 ////            Map<String, Object> model = new HashMap<>();
-//            String computerGamename = req.queryParams("computerGamename");
+//            String bookname = req.queryParams("bookname");
 //            int credit = Integer.valueOf(req.queryParams("credit"));
-//            int computerGameId = Integer.parseInt(req.params(":id"));
-//            Book computerGame = DBHelper.find(computerGameId, Book.class);
-//            computerGame.setBookname(computerGamename);
-//            computerGame.setCredit(credit);
-//            DBHelper.update(computerGame);
+//            int bookId = Integer.parseInt(req.params(":id"));
+//            Book book = DBHelper.find(bookId, Book.class);
+//            book.setBookname(bookname);
+//            book.setCredit(credit);
+//            DBHelper.update(book);
 //            res.redirect("/books");
 //            return null;
 //        }, new VelocityTemplateEngine());
 
         post("/books/:id/delete", (req, res) -> {
-            int computerGameId = Integer.parseInt(req.params(":id"));
-            Book computerGame = DBHelper.find(computerGameId, Book.class);
-            DBHelper.delete(computerGame);
+            int bookId = Integer.parseInt(req.params(":id"));
+            Book book = DBHelper.find(bookId, Book.class);
+            DBHelper.delete(book);
             res.redirect("/books");
             return null;
         }, new VelocityTemplateEngine());

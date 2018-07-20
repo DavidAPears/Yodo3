@@ -13,11 +13,11 @@
         </tr>
         #foreach ($book in $books)
         <tr>
-            <td>$book.getTitle()</td>
+            <td><a href="/books/$book.getId()">$book.getTitle()</a></td>
             <td>$book.getDescription()</td>
             <td>$book.getPrice()</td>
-            <td>$book.getImageUrl()</td>
-            <td><a href="$book.getUser().getId()">$book.getUser().getUsername()</a></td>
+            <td><a href="/books/$book.getId()"><img src="/images/harrypotter.jpeg" alt="Harry Potter and the Philosopher's Stone book cover picture" height="50rem"></a></td>
+            <td><a href="users/$book.getUser().getId()">$book.getUser().getUsername()</a></td>
             <td>$book.getGenre()</td>
             <td>$book.getFormat()</td>
             <td><form action="/books/$book.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
@@ -27,3 +27,9 @@
     </table>
 </div>
 
+<br>
+<br>
+
+<form action="/books/new">
+    <input type="image" src="/images/add_icon.png" height="30rem">
+</form>

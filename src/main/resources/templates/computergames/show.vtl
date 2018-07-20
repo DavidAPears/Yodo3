@@ -9,14 +9,14 @@
             <th>[image]</th>
             <th>Seller</th>
             <th>Console</th>
-            <th>Age classification</th>
-            <th>Game Type</th>
+            <th>Age&nbspclassification</th>
+            <th>Game&nbspType</th>
         </tr>
         <tr>
             <td>$computerGame.getTitle()</td>
             <td>$computerGame.getDescription()</td>
             <td>$computerGame.getPrice()</td>
-            <td>$computerGame.getImageUrl()</td>
+            <td><img src="$computerGame.getImageUrl()" alt="image: $computerGame.getTitle()" height="50rem"></td>
             <td><a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></td>
             <td>$computerGame.getConsole()</td>
             <td>$computerGame.getAgeClassification()</td>

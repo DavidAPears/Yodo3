@@ -33,11 +33,11 @@ public class Seeds {
         User user9 = new User("Imogen", 50);
         DBHelper.save(user9);
 
-        ComputerGame computerGame1 = new ComputerGame("Sonic the Hedgehog", "1991 Sega game", 5, "url1", user1, Console.SEGA_GENESIS, AgeClassification.THREE, GameType.ACTION);
+        ComputerGame computerGame1 = new ComputerGame("Sonic the Hedgehog", "1991 Sega game", 5, "/images/sonic.jpeg", user1, Console.SEGA_GENESIS, AgeClassification.THREE, GameType.ACTION);
         DBHelper.save(computerGame1);
-        ComputerGame computerGame2 = new ComputerGame("Mario Bros.", "Mario and Luigi in the sewers!", 6, "url2", user2, Console.GAMEBOY, AgeClassification.THREE, GameType.ACTION);
+        ComputerGame computerGame2 = new ComputerGame("Mario Bros.", "Mario and Luigi in the sewers!", 6, "/images/mariobros.jpeg", user2, Console.SUPER_NES, AgeClassification.THREE, GameType.ACTION);
         DBHelper.save(computerGame2);
-        ComputerGame computerGame3 = new ComputerGame("Men in Black", "Mr Smith and Mr Jones battle the aliens in this fun game.", 8, "url3", user2, Console.NINTENDO_64, AgeClassification.SEVEN, GameType.SCIFI);
+        ComputerGame computerGame3 = new ComputerGame("Men in Black", "Mr Smith and Mr Jones battle the aliens in this fun game.", 8, "/images/meninblack.jpg", user2, Console.SUPER_NES, AgeClassification.SEVEN, GameType.SCIFI);
         DBHelper.save(computerGame3);
 
         Advert advert1 = new Advert("Huddersfield Town top, age 3-4 years", "Blue and white home replica shirt from 2017-18 season.", 10, Category.CLOTHING, "url4", user3);

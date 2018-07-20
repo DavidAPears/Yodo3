@@ -17,17 +17,21 @@
     <label for="user">User</label>
     <input type="inputbox" id="user" name="user" required="true">
 
-    <label for="genre">Genre:
+    <label for="genre">Genre
         <select name="genre" id="genre">
-            #foreach($genre in $genres)
-                <option value="$genre.getId()">$genre.getTitle()</option>
+            #foreach ($genre in $genres)
+                <option value="$genre">$genre</option>
             #end
         </select>
     </label>
 
-<!--genre and format are enums: should be dropdown lists-->
-    <label for="format">Format</label>
-    <input type="inputbox" id="format" name="format" required="true">
+    <label for="format">Format
+        <select name="format" id="format">
+            #foreach ($format in $formats)
+                <option value="$format">$format</option>
+            #end
+        </select>
+    </label>
 
     <input type="submit" value="Save">
 
