@@ -7,6 +7,7 @@ public class Seeds {
 
     public static void seedData() {
 
+        DBHelper.deleteAll(User.class);
         DBHelper.deleteAll(Advert.class);
 
 //        delete other class objects
