@@ -21,14 +21,12 @@ public class BicyclesController {
 
 
         get("/bicycles", (req, res) -> {
-            System.out.println("Hi!");
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/bicycles/index.vtl");
 
             List<Bicycle> bicycles = DBHelper.getAll(Bicycle.class);
             model.put("bicycles", bicycles);
             ModelAndView mv = new ModelAndView(model, "templates/layout.vtl");
-            System.out.println("Bye!");
 
             return mv;
 
