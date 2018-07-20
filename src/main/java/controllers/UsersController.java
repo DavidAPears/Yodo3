@@ -22,6 +22,7 @@ public class UsersController {
     public static void main(String[] args) {
 //        using 9000 because 4567 not working
         port(9000);
+
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
         staticFileLocation("/public");
 
@@ -40,7 +41,7 @@ public class UsersController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-        get("/hello", (request, response) -> "Hello World!!");
+//        get("/hello", (request, response) -> "Hello World!!");
 
 
         get("/", (request, response) -> {
@@ -67,6 +68,7 @@ public class UsersController {
             model.put("adverts", adverts);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
+
 
         post("/users", (req, res) -> {
             String username = req.queryParams("username");
