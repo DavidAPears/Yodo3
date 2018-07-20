@@ -1,0 +1,36 @@
+<h1>Edit Bicycle</h1>
+
+<form action="/bicycles/$bicycle.getId()" method="post">
+
+    <label for="title">Title</label>
+    <input type="inputbox" id="title" name="title" required="true" value="$bicycle.getTitle()">
+
+    <label for="description">Description</label>
+    <input type="inputbox" id="description" name="description" required="true" value="$bicycle.getDescription()">
+
+    <label for="price">Price</label>
+    <input type="inputbox" id="price" name="price" required="true" value="$bicycle.getPrice()">
+
+    <label for="category">Category</label>
+    <input type="inputbox" id="category" name="category" required="true" value="$bicycle.getCategory()">
+
+    <label for="imageUrl">imageUrl</label>
+    <input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$bicycle.getImageUrl()">
+
+    <label for="user">User</label>
+    <input type="inputbox" id="user" name="user" required="true" value="$bicycle.getUser()">
+
+    <label for="wheel-size">User</label>
+    <input type="inputbox" id="wheel-size" name="wheel-size" required="true" value="$bicycle.getWheelSize()">
+
+    <label for="min-age">User</label>
+    <input type="inputbox" id="min-age" name="min-age" required="true" value="$bicycle.getMinAge()">
+
+    <label for="max-age">User</label>
+    <input type="inputbox" id="max-age" name="max-age" required="true" value="$bicycle.getMaxAge()">
+
+
+    <input type="submit" value="Save">
+
+
+</form>

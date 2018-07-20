@@ -4,9 +4,11 @@ import models.enums.Category;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "adverts")
 @Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="advert_category")
 public class Advert {
 
@@ -67,7 +69,7 @@ public class Advert {
     public String getImageUrl() { return imageUrl; }
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="user_id")
     public User getUser() {
         return user;

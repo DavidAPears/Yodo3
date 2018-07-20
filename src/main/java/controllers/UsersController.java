@@ -28,6 +28,7 @@ public class UsersController {
         Seeds.seedData();
 
         AdvertsController advertsController = new AdvertsController();
+        BicyclesController bicyclesController = new BicyclesController();
 //        ComputerGamesController computerGamesController = new ComputerGamesController();
 
 
