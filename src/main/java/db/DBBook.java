@@ -20,7 +20,7 @@ public class DBBook {
             Criteria cr = session.createCriteria(Book.class);
             cr.add(Restrictions.eq("id", id));
             book = (Book) cr.uniqueResult();
-        } catch (Exception e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
             session.close();

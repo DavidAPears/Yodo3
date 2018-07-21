@@ -75,6 +75,12 @@ public class BooksController {
             int bookId = Integer.parseInt(req.params(":id"));
             Book book = DBBook.find(bookId);
             model.put("book", book);
+            List<User> users = DBHelper.getAll(User.class);
+            model.put("users", users);
+            List<Genre> genres = Arrays.asList(Genre.values());
+            model.put("genres", genres);
+            List<Format> formats = Arrays.asList(Format.values());
+            model.put("formats", formats);
             model.put("template", "templates/books/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
