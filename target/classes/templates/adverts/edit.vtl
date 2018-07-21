@@ -20,7 +20,8 @@
     <label for="user">User</label>
     <input type="inputbox" id="user" name="user" required="true" value="$advert.getUser()">
 
-    <input type="submit" value="Save">
+    <!--<input type="submit" value="Save" id="save_button">-->
 
+    <td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="save_button" value="Save"></form></td>
 
 </form>

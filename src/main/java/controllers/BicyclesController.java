@@ -48,7 +48,7 @@ public class BicyclesController {
         }, new VelocityTemplateEngine());
 
 
-//  To return bikes by id:
+//  To search bikes:
 
         get("bicycles/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
@@ -88,7 +88,7 @@ public class BicyclesController {
 //            int credit = Integer.valueOf(req.queryParams("credit"));
 //            int bicycleId = Integer.parseInt(req.params(":id"));
 //            Bicycle bicycle = DBHelper.find(bicycleId, Bicycle.class);
-//            bicycle.setbicyclename(bicyclename);
+//            bicycle.setbicycleName(bicycleName);
 //            bicycle.setCredit(credit);
 //            DBHelper.update(bicycle);
 //            res.redirect("/bicycles");
