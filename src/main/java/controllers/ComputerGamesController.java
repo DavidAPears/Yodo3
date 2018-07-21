@@ -84,6 +84,14 @@ public class ComputerGamesController {
             ComputerGame computerGame = DBComputerGame.find(computerGameId);
             model.put("computerGame", computerGame);
             model.put("template", "templates/computergames/edit.vtl");
+            List<User> users = DBHelper.getAll(User.class);
+            model.put("users", users);
+            List<Console> consoles = Arrays.asList(Console.values());
+            model.put("consoles", consoles);
+            List<AgeClassification> ageClassifications = Arrays.asList(AgeClassification.values());
+            model.put("ageClassifications", ageClassifications);
+            List<GameType> gameTypes = Arrays.asList(GameType.values());
+            model.put("gameTypes", gameTypes);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
