@@ -95,18 +95,33 @@ public class ComputerGamesController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-//        post("/computergames/:id", (req, res) -> {
-////            Map<String, Object> model = new HashMap<>();
-//            String computerGamename = req.queryParams("computerGamename");
-//            int credit = Integer.valueOf(req.queryParams("credit"));
-//            int computerGameId = Integer.parseInt(req.params(":id"));
-//            ComputerGame computerGame = DBComputerGame.find(computerGameId);
-//            computerGame.setComputerGamename(computerGamename);
-//            computerGame.setCredit(credit);
-//            DBHelper.update(computerGame);
-//            res.redirect("/computergames");
-//            return null;
-//        }, new VelocityTemplateEngine());
+        post("/computergames/:id", (req, res) -> {
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            int price = Integer.valueOf(req.queryParams("price"));
+            String imageUrl = req.queryParams("imageUrl");
+            int userId = Integer.valueOf(req.queryParams("user"));
+            User user = DBUser.find(userId);
+            Console console = Console.valueOf(req.queryParams("console"));
+            AgeClassification ageClassification = AgeClassification.valueOf(req.queryParams("ageClassification"));
+            GameType gameType = GameType.valueOf(req.queryParams("gameType"));
+
+            int computerGameId = Integer.parseInt(req.params(":id"));
+            ComputerGame computerGame = DBComputerGame.find(computerGameId);
+
+            computerGame.setTitle(title);
+            computerGame.setDescription(description);
+            computerGame.setPrice(price);
+            computerGame.setImageUrl(imageUrl);
+            computerGame.setUser(user);
+            computerGame.setConsole(console);
+            computerGame.setAgeClassification(ageClassification);
+            computerGame.setGameType(gameType);
+
+            DBHelper.update(computerGame);
+            res.redirect("/computergames");
+            return null;
+        }, new VelocityTemplateEngine());
 
         post("/computergames/:id/delete", (req, res) -> {
             int computerGameId = Integer.parseInt(req.params(":id"));

@@ -97,6 +97,7 @@ public class BooksController {
 
             int bookId = Integer.parseInt(req.params(":id"));
             Book book = DBBook.find(bookId);
+
             book.setTitle(title);
             book.setDescription(description);
             book.setPrice(price);
@@ -104,6 +105,7 @@ public class BooksController {
             book.setUser(user);
             book.setGenre(genre);
             book.setFormat(format);
+
             DBHelper.update(book);
             res.redirect("/books");
             return null;

@@ -20,7 +20,7 @@ public class DBComputerGame {
             Criteria cr = session.createCriteria(ComputerGame.class);
             cr.add(Restrictions.eq("id", id));
             computerGame = (ComputerGame) cr.uniqueResult();
-        } catch (Exception e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
             session.close();
