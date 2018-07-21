@@ -1,6 +1,7 @@
 <p class="pageHeader">All books</p>
 
 <div class="container">
+    #if ($books.size() > 0)
     <table>
         <tr>
             <th>Title</th>
@@ -25,6 +26,9 @@
         </tr>
         #end
     </table>
+    #else
+    <h3>There are currently no books listed for trade</h3>
+    #end
 </div>
 
 <br>
