@@ -20,7 +20,7 @@
             <td>$computerGame.getPrice()Y</td>
             <td><a href="/computergames/$computerGame.getId()"><img src="$computerGame.getImageUrl()" alt="image: $computerGame.getTitle()" height="50rem"></a></td>
             <td><a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></td>
-            <td>$computerGame.getConsole()</td>
+            <td>$computerGame.getConsole().getName()</td>
             <td>$computerGame.getAgeClassification().getAge()</td>
             <td>$computerGame.getGameType()</td>
             <td><form action="/computergames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
