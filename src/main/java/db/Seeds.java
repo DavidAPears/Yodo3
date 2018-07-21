@@ -55,7 +55,7 @@ public class Seeds {
         Book book1 = new Book("Harry Potter and the Philosopher's Stone", "Book by J. K. Rowling", 5, "/images/harrypotter.jpeg", user6, Genre.FANTASY, Format.HARDBACK);
         DBHelper.save(book1);
 
-        BoardGame boardGame1 = new BoardGame("Catan", "Catan board game, good condition", 12, "url10", user7, GameType.STRATEGY);
+        BoardGame boardGame1 = new BoardGame("Catan", "Catan board game, good condition", 12, "/images/catan.jpeg", user7, GameType.STRATEGY);
         DBHelper.save(boardGame1);
 
     }
