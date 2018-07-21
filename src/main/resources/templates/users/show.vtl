@@ -5,20 +5,22 @@
 <div class="container">
     <table>
         <tr>
-            <th>Username</th>
-            <th>Credit</th>
+            <td>Username</td>
+            <td>$user.getUsername()</td>
         </tr>
         <tr>
-            <td>$user.getUsername()</td>
+            <td>Credit</td>
             <td>$user.getCredit()</td>
+        </tr>
+        <tr>
             <td>
                 <form action="/users/$user.getId()/edit">
-                    <input type="image" src="/images/edit_icon.jpg" height="30rem">
+                    <input type="submit" id="edit_button" value="Edit">
                 </form>
             </td>
             <td>
-                <form action="/users/$user.getId()/delete" method="post">
-                    <input type="image" src="/images/delete_icon.png" height="30rem">
+                <form action="/users/$user.getId()/delete" metdod="post">
+                    <input type="submit" id="delete_button" value="Delete">
                 </form>
             </td>
         </tr>
