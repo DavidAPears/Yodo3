@@ -3,26 +3,40 @@
 <div class="container">
     <table>
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>[image]</th>
-            <th>Seller</th>
-            <th>Console</th>
-            <th>Age&nbspclassification</th>
-            <th>Game&nbspType</th>
+            <td>[image]</td>
+            <td><img src="$computerGame.getImageUrl()" alt="image: $computerGame.getTitle()" width="70rem"></td>
         </tr>
         <tr>
+            <td>Title</td>
             <td>$computerGame.getTitle()</td>
+        </tr>
+        <tr>
+            <td>Description</td>
             <td>$computerGame.getDescription()</td>
+        </tr>
+        <tr>
+            <td>Price</td>
             <td>$computerGame.getPrice()Y</td>
-            <td><img src="$computerGame.getImageUrl()" alt="image: $computerGame.getTitle()" height="50rem"></td>
+        </tr>
+        <tr>
+            <td>Seller</td>
             <td><a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></td>
+        </tr>
+        <tr>
+            <td>Console</td>
             <td>$computerGame.getConsole()</td>
+        </tr>
+        <tr>
+            <td>Age&nbspclassification</td>
             <td>$computerGame.getAgeClassification()</td>
+        </tr>
+        <tr>
+            <td>Game&nbspType</td>
             <td>$computerGame.getGameType()</td>
+        </tr>
+        <tr>
             <td><form action="/computergames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
-            <td><form action="/computergames/$computerGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+            <td><form action="/computergames/$computerGame.getId()/delete" metdod="post"><input type="submit" id="delete_button" value="Delete"></form></td>
         </tr>
     </table>
 </div>
