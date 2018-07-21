@@ -42,10 +42,10 @@ public class Seeds {
 
         Advert advert1 = new Advert("Huddersfield Town top, age 3-4 years", "Blue and white home replica shirt from 2017-18 season.", 10, Category.CLOTHING, "url4", user3);
         DBHelper.save(advert1);
-        Advert advert2 = new Advert("drumsticks", "Drumsticks. For banging drums", 7, Category.MUSIC,"url5", user4);
+        Advert advert2 = new Advert("drumsticks", "Drumsticks. For banging drums.", 7, Category.MUSIC,"url5", user4);
         DBHelper.save(advert2);
 
-        Bicycle bicycle1 = new Bicycle("Pink bike", "Raleigh bike with stabilzers", 20, "url6", user5, 14, 3, 5);
+        Bicycle bicycle1 = new Bicycle("Pink bike", "Raleigh bike with stabilizers", 20, "url6", user5, 14, 3, 5);
         DBHelper.save(bicycle1);
         Bicycle bicycle2 = new Bicycle("Purple bike", "Raleigh bike with basket", 25, "url7", user5, 18, 6, 8);
         DBHelper.save(bicycle2);
