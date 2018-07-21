@@ -30,6 +30,7 @@ public class UsersController {
         AdvertsController advertsController = new AdvertsController();
         BooksController booksController = new BooksController();
         ComputerGamesController computerGamesController = new ComputerGamesController();
+        BoardGamesController boardGamesController = new BoardGamesController();
         BicyclesController bicyclesController = new BicyclesController();
 
 
