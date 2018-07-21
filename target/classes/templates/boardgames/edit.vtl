@@ -1,0 +1,70 @@
+<h1>Edit board game</h1>
+
+<form action="/boardgames/$boardGame.getId()" method="post">
+    <table>
+        <tr>
+            <td>
+                <img src="$boardGame.getImageUrl()" alt="Image: $boardGame.getTitle()" width="70rem">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="title">Title</label>
+                <input type="inputbox" id="title" name="title" required="true" value="$boardGame.getTitle()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="description">Description</label>
+                <input type="inputbox" id="description" name="description" required="true" value="$boardGame.getDescription()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="price">Price</label>
+                <input type="inputbox" id="price" name="price" required="true" value="$boardGame.getPrice()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="imageUrl">imageUrl</label>
+                <input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$boardGame.getImageUrl()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="user">User
+                    <select name="user" id="user">
+                        #foreach ($user in $users)
+                        #if ($user.getId() == $boardGame.getUser().getId())
+                        <option selected value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
+                        #else
+                        <option value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
+                        #end
+                        #end
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="gameType">Game&nbspType
+                    <select name="gameType" id="gameType">
+                        #foreach ($gameType in $gameTypes)
+                        #if ($gameType == $boardGame.getGameType())
+                        <option selected value="$gameType">$gameType</option>
+                        #else
+                        <option value="$gameType">$gameType</option>
+                        #end
+                        #end
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Save">
+            </td>
+        </tr>
+    </table>
+</form>

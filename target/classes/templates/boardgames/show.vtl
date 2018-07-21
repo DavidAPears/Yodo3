@@ -1,0 +1,35 @@
+<p class="pageHeader">Board game details</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <td>[image]</td>
+            <td><img src="$boardGame.getImageUrl()" alt="image: $boardGame.getTitle()" width="70rem"></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>$boardGame.getTitle()</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>$boardGame.getDescription()</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>$boardGame.getPrice()Y</td>
+        </tr>
+        <tr>
+            <td>Seller</td>
+            <td><a href="/users/$boardGame.getUser().getId()">$boardGame.getUser().getUsername()</a></td>
+        </tr>
+        <tr>
+            <td>Game&nbspType</td>
+            <td>$boardGame.getGameType()</td>
+        </tr>
+        <tr>
+            <td><form action="/boardgames/$boardGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/boardgames/$boardGame.getId()/delete" metdod="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+        </tr>
+    </table>
+</div>
+
