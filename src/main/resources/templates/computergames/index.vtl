@@ -1,6 +1,7 @@
 <p class="pageHeader">All computer games</p>
 
 <div class="container">
+    #if ($computergames.size() > 0)
     <table>
         <tr>
             <th>Title</th>
@@ -27,6 +28,9 @@
         </tr>
         #end
     </table>
+    #else
+    <h3>There are currently no computer games listed for trade</h3>
+    #end
 </div>
 
 <br>

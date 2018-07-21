@@ -1,6 +1,7 @@
 <p class="pageHeader">All board games</p>
 
 <div class="container">
+    #if ($boardgames.size() > 0)
     <table>
         <tr>
             <th>Title</th>
@@ -23,6 +24,9 @@
         </tr>
         #end
     </table>
+    #else
+    <h3>There are currently no board games listed for trade</h3>
+    #end
 </div>
 
 <br>
