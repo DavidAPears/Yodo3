@@ -85,18 +85,29 @@ public class BooksController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-//        post("/books/:id", (req, res) -> {
-////            Map<String, Object> model = new HashMap<>();
-//            String bookname = req.queryParams("bookname");
-//            int credit = Integer.valueOf(req.queryParams("credit"));
-//            int bookId = Integer.parseInt(req.params(":id"));
-//            Book book = DBHelper.find(bookId, Book.class);
-//            book.setBookname(bookname);
-//            book.setCredit(credit);
-//            DBHelper.update(book);
-//            res.redirect("/books");
-//            return null;
-//        }, new VelocityTemplateEngine());
+        post("/books/:id", (req, res) -> {
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            int price = Integer.valueOf(req.queryParams("price"));
+            String imageUrl = req.queryParams("imageUrl");
+            int userId = Integer.valueOf(req.queryParams("user"));
+            User user = DBUser.find(userId);
+            Genre genre = Genre.valueOf(req.queryParams("genre"));
+            Format format = Format.valueOf(req.queryParams("format"));
+
+            int bookId = Integer.parseInt(req.params(":id"));
+            Book book = DBBook.find(bookId);
+            book.setTitle(title);
+            book.setDescription(description);
+            book.setPrice(price);
+            book.setImageUrl(imageUrl);
+            book.setUser(user);
+            book.setGenre(genre);
+            book.setFormat(format);
+            DBHelper.update(book);
+            res.redirect("/books");
+            return null;
+        }, new VelocityTemplateEngine());
 
         post("/books/:id/delete", (req, res) -> {
             int bookId = Integer.parseInt(req.params(":id"));
