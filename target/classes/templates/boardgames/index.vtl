@@ -18,7 +18,7 @@
             <td>$boardGame.getPrice()Y</td>
             <td><a href="/boardgames/$boardGame.getId()"><img src="$boardGame.getImageUrl()" alt="image: $boardGame.getTitle()" height="50rem"></a></td>
             <td><a href="/users/$boardGame.getUser().getId()">$boardGame.getUser().getUsername()</a></td>
-            <td>$boardGame.getGameType()</td>
+            <td>$boardGame.getGameType().getName()</td>
             <td><form action="/boardgames/$boardGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
             <td><form action="/boardgames/$boardGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
         </tr>
