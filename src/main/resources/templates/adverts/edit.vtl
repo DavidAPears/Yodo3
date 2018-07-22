@@ -1,27 +1,49 @@
 <h1>Edit Advert</h1>
 
+
+
+
 <form action="/adverts/$advert.getId()" method="post">
 
-    <label for="title">Title</label>
+    <div class="flex_grid_thirds"></div>
+
+    <div class="title">Title</div>
+    <!--<label for="title">Title</label>-->
     <input type="inputbox" id="title" name="title" required="true" value="$advert.getTitle()">
 
-    <label for="description">Description</label>
+
+    <div class="description">Description</div>
+    <!--<label for="description">Description</label>-->
     <input type="inputbox" id="description" name="description" required="true" value="$advert.getDescription()">
 
-    <label for="price">Price</label>
+
+    <div class="price">Price</div>
+    <!--<label for="price">Price</label>-->
     <input type="inputbox" id="price" name="price" required="true" value="$advert.getPrice()">
 
-    <label for="category">Category</label>
+
+    <div class="category">Category</div>
+    <!--<label for="category">Category</label>-->
     <input type="inputbox" id="category" name="category" required="true" value="$advert.getCategory()">
 
-    <label for="imageUrl">imageUrl</label>
+
+    <div class="imageUrl">Image URL</div>
+    <!--<label for="imageUrl">imageUrl</label>-->
     <input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$advert.getImageUrl()">
 
-    <label for="user">User</label>
+
+    <div class="user">User</div>
+    <!--<label for="user">User</label>-->
     <input type="inputbox" id="user" name="user" required="true" value="$advert.getUser()">
+
 
     <!--<input type="submit" value="Save" id="save_button">-->
 
-    <td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="save_button" value="Save"></form></td>
+    <!--<td>-->
+        <div action="/adverts/$advert.getId()/edit">
+        <input type="submit" id="save_button" value="Save"></div>
+    <!--</td>-->
 
 </form>
+
+
