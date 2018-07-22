@@ -19,7 +19,7 @@
             <td>$book.getPrice()Y</td>
             <td><a href="/books/$book.getId()"><img src="$book.getImageUrl()" alt="Image: $book.getTitle()" height="50rem"></a></td>
             <td><a href="users/$book.getUser().getId()">$book.getUser().getUsername()</a></td>
-            <td>$book.getGenre()</td>
+            <td>$book.getGenre().getName()</td>
             <td>$book.getFormat()</td>
             <td><form action="/books/$book.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
             <td><form action="/books/$book.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
