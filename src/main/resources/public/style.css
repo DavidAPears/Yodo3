@@ -307,6 +307,17 @@ span.psw {
 
 .flex-container {
   display: flex;
-  flex-wrap: wrap;
-  border: 1px
+  align-items: center;
+  justify-content: center;
+  border: light grey;
 }
+
+.flex-column:hover {
+  border: 1px solid yellow;
+}
+
+.flex-column {
+  border: 1px solid #C7CBC6;
+}
+
+
