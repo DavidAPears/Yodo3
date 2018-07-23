@@ -1,28 +1,23 @@
 <p class="pageHeader">Bicycle details</p>
 
 
-<div class="flex-container">
-    <div class="flex-column">
+<div class="flex-advert-container">
 
+    <div class="flex-advert">
 
-    <div class="image"><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="350rem"></div>
-
-    <div class="title"> $bicycle.getTitle() </div>
-
-    <div class="price">Price: $bicycle.getPrice()Y</div>
-
-    <div class="description"> $bicycle.getDescription() </div>
-
+    <div class="advert-image"><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="350rem"></div>
+    <div class="advert-title"> $bicycle.getTitle() </div>
+    <div class="advert-price">Price: $bicycle.getPrice()Y</div>
+    <div class="advert-description"> $bicycle.getDescription() </div>
     <div class="wheel-size"> Wheel Size: $bicycle.getWheelSize() </div>
-
     <div class="age-range" > Age Range: $bicycle.getMinAge()-$bicycle.getMaxAge() years</div>
+    <div class="advert-seller"> Seller: $bicycle.getUser().getUsername()</div><br>
 
-    <div class="seller"> Seller: $bicycle.getUser().getUsername()</div><br>
+        <div >
+            <form type="advert-button" action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
 
-
-    <div action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit" action="/bicycles/$bicycle.getId()/delete" method="post">  <input type="submit" id="delete_button" value="Delete">
-
-    </div>
+            <form type="advert-button" action="/bicycles/$bicyle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
+        </div>
 
 
     </div>
