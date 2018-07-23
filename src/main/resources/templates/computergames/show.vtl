@@ -1,43 +1,22 @@
 <p class="pageHeader">Computer game details</p>
 
-<div class="container">
-    <table>
-        <tr>
-            <td>[image]</td>
-            <td><img src="$computerGame.getImageUrl()" alt="image: $computerGame.getTitle()" width="70rem"></td>
-        </tr>
-        <tr>
-            <td>Title</td>
-            <td>$computerGame.getTitle()</td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td>$computerGame.getDescription()</td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td>$computerGame.getPrice()Y</td>
-        </tr>
-        <tr>
-            <td>Seller</td>
-            <td><a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></td>
-        </tr>
-        <tr>
-            <td>Console</td>
-            <td>$computerGame.getConsole().getName()</td>
-        </tr>
-        <tr>
-            <td>Age&nbspclassification</td>
-            <td>$computerGame.getAgeClassification().getAge()</td>
-        </tr>
-        <tr>
-            <td>Game&nbspType</td>
-            <td>$computerGame.getGameType().getName()</td>
-        </tr>
-        <tr>
-            <td><form action="/computergames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
-            <td><form action="/computergames/$computerGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
-        </tr>
-    </table>
-</div>
+<div class="flex-advert-container">
 
+    <div class="flex-advert">
+
+        <div class="advert-image"><img src="$computerGame.getImageUrl()" alt="Image: $computerGame.getTitle()" width="275rem"></div>
+        <div class="advert-title"> $computerGame.getTitle() </div>
+        <div class="advert-description"> $computerGame.getDescription() </div>
+        <div class="advert-price">Price: $computerGame.getPrice()Y</div>
+        <div class="advert-seller"> Seller: $computerGame.getUser().getUsername()</div>
+        <div class="console">Console:: $computerGame.getConsole().getName()Y</div>
+        <div class="age"> Player Age: $computerGame.getAgeClassification().getAge()</div>
+        <div class="game-type"> Type: $computerGame.getGameType().getName()</div> <br>
+
+    <div>
+     <form class="advert-button" action="/computerGames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+
+     <form class="advert-button" action="/computerGames/$computerGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
+        </div>
+    </div>
+</div>
