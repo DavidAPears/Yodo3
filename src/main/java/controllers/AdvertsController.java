@@ -1,5 +1,6 @@
 package controllers;
 
+import db.DBAdvert;
 import db.DBHelper;
 import models.Advert;
 import models.Bicycle;
@@ -48,7 +49,7 @@ public class AdvertsController {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/adverts/show.vtl");
             int advertId = Integer.parseInt(req.params(":id"));
-            Advert advert = DBHelper.find(advertId, Advert.class);
+            Advert advert = DBAdvert.find(advertId);
             model.put("advert", advert);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
@@ -58,7 +59,7 @@ public class AdvertsController {
 //            String advertName = req.queryParams("advertname");
 //            int credit = Integer.valueOf(req.queryParams("credit"));
 //            Advert newAdvert = new Advert(advertName, credit);
-//            DBHelper.save(newAdvert);
+//            DBAdvert.save(newAdvert);
 //            res.redirect("/adverts");
 //            return null;
 //        }, new VelocityTemplateEngine());
@@ -69,7 +70,7 @@ public class AdvertsController {
         get("adverts/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int advertId = Integer.parseInt(req.params(":id"));
-            Advert advert = DBHelper.find(advertId, Advert.class);
+            Advert advert = DBAdvert.find(advertId);
             model.put("advert", advert);
             model.put("template", "templates/adverts/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
@@ -83,10 +84,10 @@ public class AdvertsController {
 //            String advertName = req.queryParams("advertName");
 //            int credit = Integer.valueOf(req.queryParams("credit"));
 //            int advertId = Integer.parseInt(req.params(":id"));
-//            Advert advert = DBHelper.find(advertId, Advert.class);
+//            Advert advert = DBAdvert.find(advertId);
 //            advert.setadvertName(advertName);
 //            advert.setCredit(credit);
-//            DBHelper.update(advert);
+//            DBAdvert.update(advert);
 //            res.redirect("/adverts");
 //            return null;
 //        }, new VelocityTemplateEngine());
@@ -96,7 +97,7 @@ public class AdvertsController {
 
         post("/adverts/:id/delete", (req, res) -> {
             int advertId = Integer.parseInt(req.params(":id"));
-            Advert advert = DBHelper.find(advertId, Advert.class);
+            Advert advert = DBAdvert.find(advertId);
             DBHelper.delete(advert);
             res.redirect("/adverts");
             return null;

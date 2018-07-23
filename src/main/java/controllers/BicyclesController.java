@@ -1,5 +1,6 @@
 package controllers;
 
+import db.DBBicycle;
 import db.DBHelper;
 import db.DBUser;
 import db.Seeds;
@@ -54,7 +55,7 @@ public class BicyclesController {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/bicycles/show.vtl");
             int bicycleId = Integer.parseInt(req.params(":id"));
-            Bicycle bicycle = DBHelper.find(bicycleId, Bicycle.class);
+            Bicycle bicycle = DBBicycle.find(bicycleId);
             model.put("bicycle", bicycle);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
@@ -75,7 +76,7 @@ public class BicyclesController {
         get("bicycles/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int bicycleId = Integer.parseInt(req.params(":id"));
-            Bicycle bicycle = DBHelper.find(bicycleId, Bicycle.class);
+            Bicycle bicycle = DBBicycle.find(bicycleId);
             model.put("bicycle", bicycle);
             model.put("template", "templates/bicycles/edit.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
@@ -101,7 +102,7 @@ public class BicyclesController {
 
         post("/bicycles/:id/delete", (req, res) -> {
             int bicycleId = Integer.parseInt(req.params(":id"));
-            Bicycle bicycle = DBHelper.find(bicycleId, Bicycle.class);
+            Bicycle bicycle = DBBicycle.find(bicycleId);
             DBHelper.delete(bicycle);
             res.redirect("/bicycles");
             return null;
