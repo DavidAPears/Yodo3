@@ -26,7 +26,6 @@
     <!--<label for="category">Category</label>-->
     <input type="inputbox" id="category" name="category" required="true" value="$advert.getCategory()">
 
-
     <div class="imageUrl">Image URL</div>
     <!--<label for="imageUrl">imageUrl</label>-->
     <input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$advert.getImageUrl()">
@@ -34,7 +33,7 @@
 
     <div class="user">User</div>
     <!--<label for="user">User</label>-->
-    <input type="inputbox" id="user" name="user" required="true" value="$advert.getUser()">
+    <input type="inputbox" id="user" name="user" required="true" value="$advert.getUser().getUsername()">
 
 
     <input type="submit" value="Save" id="save_button">

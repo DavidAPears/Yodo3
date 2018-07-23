@@ -52,9 +52,9 @@
                     <select name="gameType" id="gameType">
                         #foreach ($gameType in $gameTypes)
                         #if ($gameType == $boardGame.getGameType())
-                        <option selected value="$gameType">$gameType</option>
+                        <option selected value="$gameType">$gameType.getName()</option>
                         #else
-                        <option value="$gameType">$gameType</option>
+                        <option value="$gameType">$gameType.getName()</option>
                         #end
                         #end
                     </select>

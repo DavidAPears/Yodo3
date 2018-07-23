@@ -40,9 +40,9 @@ public class Seeds {
         ComputerGame computerGame3 = new ComputerGame("Men in Black", "Mr Smith and Mr Jones battle the aliens in this fun game.", 8, "/images/meninblack.jpg", user2, Console.SUPER_NES, AgeClassification.SEVEN, GameType.SCIFI);
         DBHelper.save(computerGame3);
 
-        Advert advert1 = new Advert("Huddersfield Town top, age 3-4 years", "Blue and white home replica shirt from 2017-18 season.", 10, Category.CLOTHING, "url4", user3);
+        Advert advert1 = new Advert("Huddersfield Town top, age 3-4 years", "Blue and white home replica shirt from 2017-18 season.", 10, Category.CLOTHING, "/images/htfc.jpeg", user3);
         DBHelper.save(advert1);
-        Advert advert2 = new Advert("drumsticks", "Drumsticks. For banging drums.", 7, Category.MUSIC,"url5", user4);
+        Advert advert2 = new Advert("drumsticks", "Drumsticks. For banging drums.", 7, Category.MUSIC,"/images/drumsticks.jpg", user4);
         DBHelper.save(advert2);
 
         Bicycle bicycle1 = new Bicycle("Pink bike", "Raleigh bike with stabilizers", 20, "url6", user5, 14, 3, 5);
