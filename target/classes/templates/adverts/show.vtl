@@ -1,0 +1,25 @@
+<p class="pageHeader">Advert Details</p>
+
+
+<div class="flex-container">
+    <div class="row">
+
+
+        <div class="image"><img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" width="500rem"></div>
+
+        <div class="title"> $advert.getTitle() </div>
+
+        <div class="price">Price: $advert.getPrice()Y</div>
+
+        <div class="description"> Description: $advert.getDescription() </div>
+
+        <div class="category"> Category $advert.getCategory() </div>
+
+        <div class="seller"> Seller: $advert.getUser().getId() $advert.getUser().getUsername()</div>
+
+
+        <div action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit" action="/adverts/$advert.getId()/delete" method="post">  <input type="submit" id="delete_button" value="Delete"></div>
+
+
+
+    </div>
