@@ -10,10 +10,6 @@ public class Seeds {
         DBHelper.deleteAll(User.class);
         DBHelper.deleteAll(Advert.class);
 
-//        delete other class objects
-//
-//        add seed data
-
         User user1 = new User("Abigail", 10);
         DBHelper.save(user1);
         User user2 = new User("Benedict", 2);
