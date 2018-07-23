@@ -8,7 +8,7 @@
         </tr>
         #foreach ($advert in $adverts)
         <tr>
-            <td>$advert.getTitle()</td>
+            <td><a href="/adverts/$advert.getId()">$advert.getTitle()</a></td>
             <td>$advert.getDescription()</td>
             <td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
             <td><form action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
