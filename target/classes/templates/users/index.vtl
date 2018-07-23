@@ -1,4 +1,4 @@
-<p class="pageHeader">All Users</p>
+<p class="pageHeader">All Users ($users.size())</p>
 
 <div class="container">
     <table>
@@ -12,12 +12,12 @@
             <td>$user.getCredit()</td>
             <td>
                 <form action="/users/$user.getId()/edit">
-                    <input type="image" src="/images/edit_icon.jpg" height="30rem">
+                    <input type="submit" id="edit_button" value="Edit">
                 </form>
             </td>
             <td>
                 <form action="/users/$user.getId()/delete" method="post">
-                    <input type="image" src="/images/delete_icon.png" height="30rem">
+                    <input type="submit" id="delete_button" value="Delete">
                 </form>
             </td>
         </tr>

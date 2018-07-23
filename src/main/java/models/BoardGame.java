@@ -17,7 +17,7 @@ public class BoardGame extends Advert {
 
     public BoardGame() {}
 
-    public BoardGame(String title, String description, int price, String imageUrl, User user, GameType GameType) {
+    public BoardGame(String title, String description, int price, String imageUrl, User user, GameType gameType) {
         super(title, description, price, Category.BOARD_GAME, imageUrl, user);
         this.gameType = gameType;
     }

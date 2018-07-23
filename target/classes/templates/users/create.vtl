@@ -1,12 +1,23 @@
 <p class="pageHeader">Create new user</p>
 
 <form action="/users" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-
-    <label for="credit">Credit:</label>
-    <input type="text" id="credit" name="credit" required>
-
-    <input type="image" src="/images/okay_icon.png" height="30rem">
-
+    <table>
+        <tr>
+            <td>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="credit">Credit:</label>
+                <input type="text" id="credit" name="credit" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="image" src="/images/okay_icon.png" height="30rem">
+            </td>
+        </tr>
+    </table>
 </form>

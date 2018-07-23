@@ -117,12 +117,19 @@ public class DBHelper {
         return results;
     }
 
-    public static <T> T find(int id, Class classType) {
-        session = HibernateUtil.getSessionFactory().openSession();
-        Criteria cr = session.createCriteria(classType);
-        cr.add(Restrictions.eq("id", id));
-        return getUnique(cr);
-
-    }
+//    public static <T> T find(int id, Class classType) {
+//        session = HibernateUtil.getSessionFactory().openSession();
+//        Criteria cr = null;
+//        try {
+//            cr = session.createCriteria(classType);
+//            cr.add(Restrictions.eq("id", id));
+//            Class result = getUnique(cr);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            session.close();
+//        }
+//        return result;
+//    }
 
 }
