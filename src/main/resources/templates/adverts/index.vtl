@@ -1,45 +1,62 @@
 <p class="pageHeader">All Adverts ($adverts.size())</p>
 
-<div class="container">
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Image</th>
-        </tr>
-        #foreach ($advert in $adverts)
-        <tr>
-            <td><a href="/adverts/$advert.getId()">$advert.getTitle()</a></td>
-            <td>$advert.getDescription()</td>
-            <td><a href="/adverts/$advert.getId()"><img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" height="50rem"></a></td>
-            <td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
-            <td><form action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
-        </tr>
-        #end
-    </table>
+<!--<div class="container">-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>Title</th>-->
+            <!--<th>Description</th>-->
+            <!--<th>Image</th>-->
+        <!--</tr>-->
+        <!--#foreach ($advert in $adverts)-->
+        <!--<tr>-->
+            <!--<td><a href="/adverts/$advert.getId()">$advert.getTitle()</a></td>-->
+            <!--<td>$advert.getDescription()</td>-->
+            <!--<td><a href="/adverts/$advert.getId()"><img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" height="50rem"></a></td>-->
+            <!--<td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>-->
+            <!--<td><form action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>-->
+        <!--</tr>-->
+        <!--#end-->
+    <!--</table>-->
+<!--</div>-->
+
+<!--<form action="/adverts/new">-->
+    <!--<input type="image" src="/images/add_icon.png" height="30rem">-->
+<!--</form>-->
+
+
+<!--Below puts all adverts in a flexbox-->
+
+<div class="flex-advert-container">
+#foreach ($advert in $adverts)
+
+<div class="flex-advert" >
+
+<div class="advert-image"><img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" width="150rem"></div>
+
+<div class="advert-title"> $advert.getTitle() </div>
+
+<div class="advert-description"> Description: $advert.getDescription() </div>
+
+<div class="advert-price">Price: $advert.getPrice()Y</div>
+
+<div >
+<form class="advert-button" action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+
+<form class="advert-button" action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
+#end
 </div>
 
-<form action="/adverts/new">
-    <input type="image" src="/images/add_icon.png" height="30rem">
-</form>
+</div>
 
-<br>
-<!--Add new advert for:-->
-<!--<a href="/computergames/new">Computer&nbspgame</a> |-->
-<!--<a href="/books/new">Book</a> |-->
-<!--<a href="/bicycles/new">Bicycle</a> |-->
-<!--<a href="/boardgames/new">Board&nbspGame</a> |-->
-<!--<a href="/adverts/new">Other item</a>-->
-
-
-
-<div class="dropdown">
-    <button class="dropbtn">CREATE NEW ADVERT</button>
-    <div class="dropdown-content">
-        <a href="/computergames/new">ComputerGame</a>
-        <a href="/books/new">Book</a>
-        <a href="/bicycles/new">Bicycle</a>
-        <a href="/boardgames/new">BoardGame</a>
-        <a href="/adverts/new">Other item</a>
+    <br>
+    <div class="dropdown">
+        <button class="dropbtn">CREATE NEW ADVERT</button>
+        <div class="dropdown-content">
+            <a href="/computergames/new">ComputerGame</a>
+            <a href="/books/new">Book</a>
+            <a href="/bicycles/new">Bicycle</a>
+            <a href="/boardgames/new">BoardGame</a>
+            <a href="/adverts/new">Other item</a>
+        </div>
     </div>
-</div>
+
