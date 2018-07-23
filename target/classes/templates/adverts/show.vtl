@@ -13,9 +13,9 @@
         <div class="advert-seller"><a href="/users/$advert.getUser().getId()">User: $advert.getUser().getUsername()</a></div><br>
 
         <div >
-            <form type="advert-button" action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+            <form class="advert-button" action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
 
-            <form type="advert-button" action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
+            <form class="advert-button" action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
         </div>
 
 

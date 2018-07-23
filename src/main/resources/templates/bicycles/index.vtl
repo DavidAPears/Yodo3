@@ -13,10 +13,10 @@
         </tr>
         #foreach ($bicycle in $bicycles)
         <tr>
-            <td>$bicycle.getTitle()</td>
+            <td><a href="/bicycles/$bicycle.getId()">$bicycle.getTitle()</a></td>
             <td>$bicycle.getDescription()</td>
             <td>$bicycle.getPrice()</td>
-            <td><img src="$bicycle.getImageUrl()" alt="image: $bicycle.getTitle()" width="150rem"></td>
+            <td><a href="/bicycles/$bicycle.getId()"><img src="$bicycle.getImageUrl()" alt="image: $bicycle.getTitle()" width="150rem"></td>
             <td>$bicycle.getUser().getUsername()</td>
             <td>$bicycle.getWheelSize()</td>
             <td>$bicycle.getMinAge()-$bicycle.getMaxAge()</td>

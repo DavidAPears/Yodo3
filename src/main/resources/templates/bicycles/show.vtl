@@ -1,6 +1,5 @@
 <p class="pageHeader">Bicycle details</p>
 
-
 <div class="flex-advert-container">
 
     <div class="flex-advert">
@@ -13,12 +12,10 @@
     <div class="age-range" > Age Range: $bicycle.getMinAge()-$bicycle.getMaxAge() years</div>
     <div class="advert-seller"> Seller: $bicycle.getUser().getUsername()</div><br>
 
-        <div >
-            <form type="advert-button" action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+        <div>
+            <form class="advert-button" action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
 
-            <form type="advert-button" action="/bicycles/$bicyle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
+            <form class="advert-button" action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
         </div>
-
-
     </div>
 </div>
