@@ -42,7 +42,7 @@
                 <label for="gameType">Game&nbspType
                     <select name="gameType" id="gameType">
                         #foreach ($gameType in $gameTypes)
-                        <option value="$gameType">$gameType</option>
+                        <option value="$gameType">$gameType.getName()</option>
                         #end
                     </select>
                 </label>

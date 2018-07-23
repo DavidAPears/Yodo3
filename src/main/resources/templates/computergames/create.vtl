@@ -42,7 +42,7 @@
                 <label for="console">Console
                     <select name="console" id="console">
                         #foreach ($console in $consoles)
-                        <option value="$console">$console</option>
+                        <option value="$console">$console.getName()</option>
                         #end
                     </select>
                 </label>
@@ -53,7 +53,7 @@
                 <label for="ageClassification">Age&nbspClassification
                     <select name="ageClassification" id="ageClassification">
                         #foreach ($ageClassification in $ageClassifications)
-                        <option value="$ageClassification">$ageClassification</option>
+                        <option value="$ageClassification">$ageClassification.getAge()</option>
                         #end
                     </select>
                 </label>
@@ -64,7 +64,7 @@
                 <label for="gameType">Game&nbspType
                     <select name="gameType" id="gameType">
                         #foreach ($gameType in $gameTypes)
-                        <option value="$gameType">$gameType</option>
+                        <option value="$gameType">$gameType.getName()</option>
                         #end
                     </select>
                 </label>
