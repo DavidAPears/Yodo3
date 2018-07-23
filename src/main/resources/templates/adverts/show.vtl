@@ -15,7 +15,7 @@
 
         <div class="category"> Category $advert.getCategory().getName() </div>
 
-        <div class="seller"> Seller: $advert.getUser().getId() $advert.getUser().getUsername()</div>
+        <div class="seller"><a href="/users/$advert.getUser().getId()">User: $advert.getUser().getUsername()</a></div>
 
 
         <div action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit" action="/adverts/$advert.getId()/delete" method="post">  <input type="submit" id="delete_button" value="Delete"></div>

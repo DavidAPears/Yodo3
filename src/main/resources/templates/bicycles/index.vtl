@@ -21,13 +21,13 @@
             <td>$bicycle.getWheelSize()</td>
             <td>$bicycle.getMinAge()-$bicycle.getMaxAge()</td>
 
-            <td><form action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button_green" value="Edit"></form></td>
-            <td><form action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button_red" value="Delete"></form></td>
+            <td><form action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
         </tr>
         #end
     </table>
 </div>
 
 <form action="/bicycles/new">
-    <input type="image" src="/images/add_icon.png" height="30rem">
+    <input type="submit" id="create_button" value="Create">
 </form>
