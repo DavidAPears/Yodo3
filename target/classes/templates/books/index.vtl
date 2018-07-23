@@ -1,0 +1,29 @@
+<p class="pageHeader">All books</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>[image]</th>
+            <th>Seller</th>
+            <th>Genre</th>
+            <th>Format</th>
+        </tr>
+        #foreach ($book in $books)
+        <tr>
+            <td>$book.getTitle()</td>
+            <td>$book.getDescription()</td>
+            <td>$book.getPrice()</td>
+            <td>$book.getImageUrl()</td>
+            <td><a href="$book.getUser().getId()">$book.getUser().getUsername()</a></td>
+            <td>$book.getGenre()</td>
+            <td>$book.getFormat()</td>
+            <td><form action="/books/$book.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/books/$book.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+        </tr>
+        #end
+    </table>
+</div>
+
