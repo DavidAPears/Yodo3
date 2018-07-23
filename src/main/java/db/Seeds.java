@@ -58,6 +58,8 @@ public class Seeds {
         DBHelper.save(advert5);
         Advert advert6 = new Advert("Elmo!", "One owner, much loved. Genuine reason for sale (I prefer Cookie Monster now).", 4, Category.TOY, "/images/elmo.jpeg", user6);
         DBHelper.save(advert6);
+        Advert advert7 = new Advert("Salmon horse", "With Hungarian visa.", 1000000, Category.OTHER, "/images/horse.png", user6);
+        DBHelper.save(advert7);
 
         Bicycle bicycle1 = new Bicycle("Pink bike", "Raleigh bike with stabilizers", 20, "/images/pinkbike.jpg", user5, 14, 3, 5);
         DBHelper.save(bicycle1);
@@ -77,6 +79,8 @@ public class Seeds {
         DBHelper.save(boardGame1);
         BoardGame boardGame2 = new BoardGame("Scrabble Junior", "Word game for kids.", 7, "/images/scrabble.jpeg", user8, GameType.WORD);
         DBHelper.save(boardGame2);
+        BoardGame boardGame3 = new BoardGame("Ligretto", "Addictive game!", 4, "/images/ligretto.jpeg", user8, GameType.OTHER);
+        DBHelper.save(boardGame3);
 
     }
 
