@@ -1,0 +1,27 @@
+<p class="pageHeader">Bicycle details</p>
+
+
+<div class="flex-container">
+    <div class="row">
+
+
+    <div class="image"><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="500rem"></div>
+
+    <div class="title"> $bicycle.getTitle() </div>
+
+    <div class="price">Price: $bicycle.getPrice()Y</div>
+
+    <div class="description"> Description: $bicycle.getDescription() </div>
+
+    <div class="wheel-size"> Wheel Size: $bicycle.getWheelSize() </div>
+
+    <div class="age-range" > Age Range: $bicycle.getMinAge() - $bicycle.getMaxAge() </div>
+
+    <div class="seller"> Seller: $bicycle.getUser().getId() $bicycle.getUser().getUsername()</div>
+
+
+    <div action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit" action="/bicycles/$bicycle.getId()/delete" method="post">  <input type="submit" id="delete_button" value="Delete"></div>
+
+
+
+</div>
