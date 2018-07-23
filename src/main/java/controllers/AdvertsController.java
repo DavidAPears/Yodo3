@@ -2,12 +2,17 @@ package controllers;
 
 import db.DBAdvert;
 import db.DBHelper;
+import db.DBUser;
 import models.Advert;
 import models.Bicycle;
+import models.BoardGame;
 import models.User;
+import models.enums.Category;
+import models.enums.GameType;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +44,12 @@ public class AdvertsController {
         get("/adverts/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "templates/adverts/create.vtl");
+            List<User> users = DBHelper.getAll(User.class);
+            model.put("users", users);
+            List<Category> categorys = Arrays.asList(Category.values());
+            model.put("categorys", categorys);
+
+
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
@@ -63,6 +74,20 @@ public class AdvertsController {
 //            res.redirect("/adverts");
 //            return null;
 //        }, new VelocityTemplateEngine());
+
+        post("/adverts", (req, res) -> {
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            int price = Integer.valueOf(req.queryParams("price"));
+            Category category = Category.valueOf(req.queryParams("category"));
+            String imageUrl = req.queryParams("imageUrl");
+            int userId = Integer.valueOf(req.queryParams("user"));
+            User user = DBUser.find(userId);
+            Advert newAdvert = new Advert(title, description, price, category, imageUrl, user);
+            DBHelper.save(newAdvert);
+            res.redirect("/adverts");
+            return null;
+        }, new VelocityTemplateEngine());
 
 
 //  To edit adverts:

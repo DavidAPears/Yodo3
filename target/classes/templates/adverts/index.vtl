@@ -1,18 +1,24 @@
-<p class="pageHeader">All Adverts</p>
+<p class="pageHeader">All Adverts ($adverts.size())</p>
 
 <div class="container">
     <table>
         <tr>
             <th>Title</th>
             <th>Description</th>
+            <th>Image</th>
         </tr>
         #foreach ($advert in $adverts)
         <tr>
-            <td>$advert.getTitle()</td>
+            <td><a href="/adverts/$advert.getId()">$advert.getTitle()</a></td>
             <td>$advert.getDescription()</td>
+            <td><a href="/adverts/$advert.getId()"><img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" height="50rem"></a></td>
             <td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
             <td><form action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
         </tr>
         #end
     </table>
 </div>
+
+<form action="/adverts/new">
+    <input type="image" src="/images/add_icon.png" height="30rem">
+</form>

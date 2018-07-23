@@ -52,9 +52,9 @@
                     <select name="genre" id="genre">
                         #foreach ($genre in $genres)
                         #if ($book.getGenre()==$genre)
-                        <option value="$genre" selected>$genre</option>
+                        <option value="$genre" selected>$genre.getName()</option>
                         #else
-                        <option value="$genre">$genre</option>
+                        <option value="$genre">$genre.getName()</option>
                         #end
                         #end
                     </select>
@@ -67,9 +67,9 @@
                     <select name="format" id="format">
                         #foreach ($format in $formats)
                         #if ($book.getFormat()==$format)
-                        <option value="$format" selected>$format</option>
+                        <option value="$format" selected>$format.getName()</option>
                         #else
-                        <option value="$format">$format</option>
+                        <option value="$format">$format.getName()</option>
                         #end
                         #end
                     </select>

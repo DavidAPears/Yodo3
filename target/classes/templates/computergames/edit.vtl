@@ -52,9 +52,9 @@
                     <select name="console" id="console">
                         #foreach ($console in $consoles)
                         #if ($console == $computerGame.getConsole())
-                        <option selected value="$console">$console</option>
+                        <option selected value="$console">$console.getName()</option>
                         #else
-                        <option value="$console">$console</option>
+                        <option value="$console">$console.getName()</option>
                         #end
                         #end
                     </select>
@@ -67,9 +67,9 @@
                     <select name="ageClassification" id="ageClassification">
                         #foreach ($ageClassification in $ageClassifications)
                         #if ($ageClassification == $computerGame.getAgeClassification())
-                        <option selected value="$ageClassification">$ageClassification</option>
+                        <option selected value="$ageClassification">$ageClassification.getAge()</option>
                         #else
-                        <option value="$ageClassification">$ageClassification</option>
+                        <option value="$ageClassification">$ageClassification.getAge()</option>
                         #end
                         #end
                     </select>
@@ -82,9 +82,9 @@
                     <select name="gameType" id="gameType">
                         #foreach ($gameType in $gameTypes)
                         #if ($gameType == $computerGame.getGameType())
-                        <option selected value="$gameType">$gameType</option>
+                        <option selected value="$gameType">$gameType.getName()</option>
                         #else
-                        <option value="$gameType">$gameType</option>
+                        <option value="$gameType">$gameType.getName()</option>
                         #end
                         #end
                     </select>

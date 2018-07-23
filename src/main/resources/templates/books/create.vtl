@@ -42,7 +42,7 @@
             <label for="genre">Genre
                 <select name="genre" id="genre">
                     #foreach ($genre in $genres)
-                        <option value="$genre">$genre</option>
+                        <option value="$genre">$genre.getName()</option>
                     #end
                 </select>
             </label>
@@ -53,7 +53,7 @@
             <label for="format">Format
                 <select name="format" id="format">
                     #foreach ($format in $formats)
-                        <option value="$format">$format</option>
+                        <option value="$format">$format.getName()</option>
                     #end
                 </select>
             </label>

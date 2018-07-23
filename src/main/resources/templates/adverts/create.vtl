@@ -11,16 +11,26 @@
     <label for="price">Price</label>
     <input type="inputbox" id="price" name="price" required="true">
 
-    <label for="category">Category</label>
-    <input type="inputbox" id="category" name="category" required="true">
+    <label for="category">Category
+        <select name="category" id="category">
+            #foreach ($category in $categorys)
+            <option value="$category">$category</option>
+            #end
+        </select>
+    </label>
 
     <label for="imageUrl">imageUrl</label>
     <input type="inputbox" id="imageUrl" name="imageUrl" required="true">
 
-    <label for="user">User</label>
-    <input type="inputbox" id="user" name="user" required="true">
+    <label for="user">User
+        <select name="user" id="user">
+            #foreach ($user in $users)
+            <option value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
+            #end
+        </select>
+    </label>
 
-    <input type="submit" value="Save">
 
-    <input type="submit_button" name="btn" class="btn-style" value="submit" />
+    <input type="submit" name="btn" class="btn-style" value="Save">
+
 </form>
