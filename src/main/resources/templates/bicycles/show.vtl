@@ -1,0 +1,38 @@
+<p class="pageHeader">Bicycle details</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <td>[image]</td>
+            <td><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="70rem"></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>$bicycle.getTitle()</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>$bicycle.getPrice()Y</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>$bicycle.getDescription()</td>
+        </tr>
+        <tr>
+            <td>Wheel Size</td>
+            <td>$bicycle.getWheelSize()</td>
+        </tr>
+        <tr>
+            <td>Age Range</td>
+            <td>$bicycle.getMinAge-$bicycle.getMaxAge()</td>
+        </tr>
+        <tr>
+            <td>Seller</td>
+            <td><a href="/users/$bicycle.getUser().getId()">$bicycle.getUser().getUsername()</a></td>
+        </tr>
+        <tr>
+            <td><form action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+        </tr>
+    </table>
+</div>
