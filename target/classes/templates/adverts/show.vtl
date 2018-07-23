@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p class="pageHeader">Advert Details</p>
 
 
@@ -23,3 +24,36 @@
 
 
     </div>
+=======
+<p class="pageHeader">Advert details</p>
+
+<div class="container">
+    <table>
+        <tr>
+            <td>[image]</td>
+            <td><img src="$advert.getImageUrl()" alt="image: $advert.getTitle()" width="70rem"></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>$advert.getTitle()</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>$advert.getDescription()</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>$advert.getPrice()Y</td>
+        </tr>
+        <tr>
+            <td>Seller</td>
+            <td><a href="/users/$advert.getUser().getId()">$advert.getUser().getUsername()</a></td>
+        </tr>
+        <tr>
+            <td><form action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
+            <td><form action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
+        </tr>
+    </table>
+</div>
+
+>>>>>>> 580ba66f222b4f68d6b215271403bb91190d3533
