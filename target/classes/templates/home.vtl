@@ -1,7 +1,33 @@
 <header>
-    <div id="logobox">
-        <a href="" id="logo">
-            <img src="images/yodologo.png" id="logo" style="width:500px;height:200px;">
-        </a>
-    </div>
+    Welcome
+
 </header>
+
+
+
+<!--This is log-in page, potentially to be moved to page after 'create advert'-->
+
+<form action="action_page.php">
+    <div class="imgcontainer">
+        <img src="/images/iconlogin.png" alt="Avatar" class="avatar" height = "70rem">
+    </div>
+
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+
