@@ -29,7 +29,9 @@
 
 <br>
 
-<p class="pageHeader">$user.getUsername()'s current listed adverts:</p>
+
+#if ($adverts.size() > 0)
+<p class="pageHeader">$user.getUsername()'s current listed adverts ($adverts.size()):</p>
 <div class="container">
     <table>
         #foreach ($advert in $adverts)
@@ -41,3 +43,7 @@
         #end
     </table>
 </div>
+#else
+<p>User $user.getUsername() currently has no adverts listed</p>
+#end
+

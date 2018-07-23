@@ -2,6 +2,7 @@ package db;
 
 import models.Advert;
 import models.User;
+import models.enums.Category;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -18,6 +19,22 @@ public class DBUser {
         List<Advert> adverts = null;
         try {
             Criteria cr = session.createCriteria(Advert.class);
+            cr.add(Restrictions.eq("user", user));
+            adverts = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return adverts;
+    }
+
+    public static List<Advert> getAdvertsForUserByCategory(User user, Category category) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Advert> adverts = null;
+        try {
+            Criteria cr = session.createCriteria(Advert.class);
+            cr.add(Restrictions.eq("category", category));
             cr.add(Restrictions.eq("user", user));
             adverts = cr.list();
         } catch (HibernateException e) {

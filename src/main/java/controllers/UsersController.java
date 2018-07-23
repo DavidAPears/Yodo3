@@ -5,9 +5,11 @@ import db.DBUser;
 import db.Seeds;
 import models.Advert;
 import models.User;
+import models.enums.Category;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,6 +65,10 @@ public class UsersController {
             model.put("user", user);
             List<Advert> adverts = DBUser.getAdvertsForUser(user);
             model.put("adverts", adverts);
+
+            List<Category> categorys = Arrays.asList(Category.values());
+            model.put("categorys", categorys);
+
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 

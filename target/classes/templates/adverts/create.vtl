@@ -14,7 +14,9 @@
     <label for="category">Category
         <select name="category" id="category">
             #foreach ($category in $categorys)
-            <option value="$category">$category</option>
+                #if (!$category.isClass())
+                <option value="$category">$category</option>
+                #end
             #end
         </select>
     </label>
