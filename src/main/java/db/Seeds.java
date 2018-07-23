@@ -45,11 +45,11 @@ public class Seeds {
         Advert advert2 = new Advert("drumsticks", "Drumsticks. For banging drums.", 7, Category.MUSIC,"url5", user4);
         DBHelper.save(advert2);
 
-        Bicycle bicycle1 = new Bicycle("Pink bike", "Raleigh bike with stabilizers", 20, "url6", user5, 14, 3, 5);
+        Bicycle bicycle1 = new Bicycle("Pink bike", "Raleigh bike with stabilizers", 20, "/images/pinkbike.png", user5, 14, 3, 5);
         DBHelper.save(bicycle1);
-        Bicycle bicycle2 = new Bicycle("Purple bike", "Raleigh bike with basket", 25, "url7", user5, 18, 6, 8);
+        Bicycle bicycle2 = new Bicycle("Purple bike", "Raleigh bike with basket", 25, "/images/purplebike.JPG", user5, 18, 6, 8);
         DBHelper.save(bicycle2);
-        Bicycle bicycle3 = new Bicycle("Black bike", "Apollo bike with 12 gears", 30, "url8", user5, 20, 7, 9);
+        Bicycle bicycle3 = new Bicycle("Black bike", "Apollo bike with 12 gears", 30, "/images/blackbike.jpg", user5, 20, 7, 9);
         DBHelper.save(bicycle3);
 
         Book book1 = new Book("Harry Potter and the Philosopher's Stone", "Book by J. K. Rowling", 5, "/images/harrypotter.jpeg", user6, Genre.FANTASY, Format.HARDBACK);
