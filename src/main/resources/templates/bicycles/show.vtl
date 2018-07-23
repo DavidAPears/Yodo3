@@ -7,17 +7,17 @@
 
     <div class="image"><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="350rem"></div>
 
-    <div class="title">Item: $bicycle.getTitle() </div>
+    <div class="title"> $bicycle.getTitle() </div>
 
     <div class="price">Price: $bicycle.getPrice()Y</div>
 
-    <div class="description"> Description: $bicycle.getDescription() </div>
+    <div class="description"> $bicycle.getDescription() </div>
 
     <div class="wheel-size"> Wheel Size: $bicycle.getWheelSize() </div>
 
-    <div class="age-range" > Age Range: $bicycle.getMinAge() - $bicycle.getMaxAge() </div>
+    <div class="age-range" > Age Range: $bicycle.getMinAge()-$bicycle.getMaxAge() years</div>
 
-    <div class="seller"> Seller: $bicycle.getUser().getId() $bicycle.getUser().getUsername()</div><br>
+    <div class="seller"> Seller: $bicycle.getUser().getUsername()</div><br>
 
 
     <div action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit" action="/bicycles/$bicycle.getId()/delete" method="post">  <input type="submit" id="delete_button" value="Delete">

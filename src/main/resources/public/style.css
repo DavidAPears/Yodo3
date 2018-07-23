@@ -64,13 +64,13 @@ background-color:#19E240;
 
 
 #create_button {
-background-color:#ffff00;
+background-color:#2254F1;
 	padding:10px;
 	position:relative;
 	font-family: 'verdana', sans-serif;
 	font-size:12px;
 	text-decoration:none;
-	color:black;
+	color:white;
 	border: solid 1px #831212;
 	background-image: linear-gradient(bottom, rgb(171,27,27) 0%, rgb(212,51,51) 100%);
 	border-radius: 5px;
@@ -100,7 +100,7 @@ background-color:#ffff00;
 
 
 #save_button {
-background-color:#0000ff;
+background-color:#F1E422;
 	padding:10px;
 	position:relative;
 	font-family: 'verdana', sans-serif;
