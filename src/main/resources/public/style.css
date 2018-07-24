@@ -192,11 +192,11 @@ background-color:#F1E422;
 .flex-advert-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: row;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
   size: 300px;
   padding: 10px;
-  border: 1px solid #C7CBC6;
+
   }
 
 /* individual ITEMS(adverts) within container */
