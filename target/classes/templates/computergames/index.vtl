@@ -1,41 +1,91 @@
-<p class="pageHeader">All computer games ($computergames.size())</p>
+<p class="pageHeader">All computer games ($computerGames.size())</p>
 
-<div class="container">
-    #if ($computergames.size() > 0)
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>[image]</th>
-            <th>Seller</th>
-            <th>Console</th>
-            <th>Age&nbspclassification</th>
-            <th>Game&nbspType</th>
-        </tr>
-        #foreach ($computerGame in $computergames)
-        <tr>
-            <td><a href="/computergames/$computerGame.getId()">$computerGame.getTitle()</a></td>
-            <td>$computerGame.getDescription()</td>
-            <td>$computerGame.getPrice()Y</td>
-            <td><a href="/computergames/$computerGame.getId()"><img src="$computerGame.getImageUrl()" alt="image: $computerGame.getTitle()" height="50rem"></a></td>
-            <td><a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></td>
-            <td>$computerGame.getConsole().getName()</td>
-            <td>$computerGame.getAgeClassification().getAge()</td>
-            <td>$computerGame.getGameType().getName()</td>
-            <td><form action="/computergames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
-            <td><form action="/computergames/$computerGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
-        </tr>
-        #end
-    </table>
-    #else
-    <h3>There are currently no computer games listed for trade</h3>
+
+
+<div class="flex-advert-container">
+    #foreach ($computerGame in $computerGames)
+
+    <div class="flex-advert" >
+
+        <div class="computerGame-image"><img src="$computerGame.getImageUrl()" alt="Image: $computerGame.getTitle()" width="150rem"></div>
+
+        <div class="title"> $computerGame.getTitle() </div>
+
+        <div class="description"> Description $computerGame.getDescription() </div>
+
+        <div class="computergame-price">Price $computerGame.getPrice()Y</div>
+
+        <div class="user"> User $computerGame.getUser().getUsername()</div>
+
+        <div class="console"> Console $computerGame.getConsole().getName()</div>
+
+        <div class="age-classification"> Age Rating $computerGame.getAgeClassification().getAge()
+        </div>
+
+        <div class="type"> Type $computerGame.getGameType().getName()
+        </div>
+
+
+
+        <div class="buttondiv"><form class="computergame-button" action="/computerGames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+
+            <form class="computergame-button" action="/computergames/$computer.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></div>
+
+    </div>
     #end
+
+
 </div>
 
-<br>
-<br>
 
-<form action="/computergames/new">
-    <input type="submit" id="create_button" value="Create">
+
+
+
+
+
+
+
+
+
+
+
+<!--Origional Code -->
+<!--<div class="container">-->
+    <!--#if ($computergames.size() > 0)-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>Title</th>-->
+            <!--<th>Description</th>-->
+            <!--<th>Price</th>-->
+            <!--<th>[image]</th>-->
+            <!--<th>Seller</th>-->
+            <!--<th>Console</th>-->
+            <!--<th>Age&nbspclassification</th>-->
+            <!--<th>Game&nbspType</th>-->
+        <!--</tr>-->
+        <!--#foreach ($computerGame in $computergames)-->
+        <!--<tr>-->
+            <!--<td><a href="/computergames/$computerGame.getId()">$computerGame.getTitle()</a></td>-->
+            <!--<td>$computerGame.getDescription()</td>-->
+            <!--<td>$computerGame.getPrice()Y</td>-->
+            <!--<td><a href="/computergames/$computerGame.getId()"><img src="$computerGame.getImageUrl()" alt="image: $computerGame.getTitle()" height="50rem"></a></td>-->
+            <!--<td><a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></td>-->
+            <!--<td>$computerGame.getConsole().getName()</td>-->
+            <!--<td>$computerGame.getAgeClassification().getAge()</td>-->
+            <!--<td>$computerGame.getGameType().getName()</td>-->
+            <!--<td><form action="/computergames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>-->
+            <!--<td><form action="/computergames/$computerGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>-->
+        <!--</tr>-->
+        <!--#end-->
+    <!--</table>-->
+    <!--#else-->
+    <!--<h3>There are currently no computer games listed for trade</h3>-->
+    <!--#end-->
+<!--</div>-->
+
+<!--<br>-->
+<!--<br>-->
+
+<!--<form action="/computergames/new">-->
+    <!--<input type="submit" id="create_button" value="Create">-->
 </form>
