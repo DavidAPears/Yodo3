@@ -196,8 +196,11 @@ background-color:#F1E422;
   justify-content: center;
   size: 300px;
   padding: 10px;
-
   }
+
+.buttondiv {
+    margin-top: auto;
+}
 
 /* individual ITEMS(adverts) within container */
 
@@ -207,6 +210,8 @@ background-color:#F1E422;
   background color: light grey;
   border: 1px solid #C7CBC6;
   width: 300px;
+  display: flex;
+  flex-direction: column;
   }
 }
 
@@ -220,9 +225,6 @@ background-color:#F1E422;
     }
 
 
-
-
-}
 /* TITLES within advert boxes */
 #.advert-title {
 	position:relative;
