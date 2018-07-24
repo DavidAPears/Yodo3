@@ -26,7 +26,6 @@
 
     <label for="user">User
         <select name="user" id="user">
-            <option value=""></option>
             #foreach ($user in $users)
             <option value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
             #end
