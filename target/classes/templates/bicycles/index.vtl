@@ -1,33 +1,74 @@
 <p class="pageHeader">All Bicycles</p>
 
-<div class="container">
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Image</th>
-            <th>Seller</th>
-            <th>Wheel-size</th>
-            <th>Age-Range</th>
-        </tr>
-        #foreach ($bicycle in $bicycles)
-        <tr>
-            <td><a href="/bicycles/$bicycle.getId()">$bicycle.getTitle()</a></td>
-            <td>$bicycle.getDescription()</td>
-            <td>$bicycle.getPrice()</td>
-            <td><a href="/bicycles/$bicycle.getId()"><img src="$bicycle.getImageUrl()" alt="image: $bicycle.getTitle()" width="150rem"></td>
-            <td>$bicycle.getUser().getUsername()</td>
-            <td>$bicycle.getWheelSize()</td>
-            <td>$bicycle.getMinAge()-$bicycle.getMaxAge()</td>
+<div class="flex-advert-container">
+    #if ($bicycles.size() > 0)
+    #foreach ($bicycle in $bicycles)
 
-            <td><form action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
-            <td><form action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
-        </tr>
-        #end
-    </table>
+    <div class="flex-advert" >
+
+        <div class="bicycle-image"><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="150rem"></div>
+
+        <div class="title"> $bicycle.getTitle() </div>
+
+        <div class="description"> $bicycle.getDescription() </div>
+
+        <div class="price"> Price $bicycle.getPrice()Y</div>
+
+        <div class="user"> User $bicycle.getUser().getUsername()</div>
+
+    <di class="wheel-size"> Wheel Size $bicycle.getWheelSize()</di>
+
+    <div class="age-range"> Age Range $bicycle.getMinAge()-$bicycle.getMaxAge()</div>
+
+        <div class="buttondiv">
+            <form class="advert-button" action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+
+            <form class="advert-button" action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></div>
+
+    </div>
+    #end
+    #else
+    <h3>There are currently no bicycles listed for trade</h3>
+    #end
 </div>
 
 <form action="/bicycles/new">
     <input type="submit" id="create_button" value="Create">
 </form>
+
+
+
+
+
+        <!--Code in table form:-->
+
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>Title</th>-->
+            <!--<th>Description</th>-->
+            <!--<th>Price</th>-->
+            <!--<th>Image</th>-->
+            <!--<th>Seller</th>-->
+            <!--<th>Wheel-size</th>-->
+            <!--<th>Age-Range</th>-->
+        <!--</tr>-->
+        <!--#foreach ($bicycle in $bicycles)-->
+        <!--<tr>-->
+            <!--<td><a href="/bicycles/$bicycle.getId()">$bicycle.getTitle()</a></td>-->
+            <!--<td>$bicycle.getDescription()</td>-->
+            <!--<td>$bicycle.getPrice()</td>-->
+            <!--<td><a href="/bicycles/$bicycle.getId()"><img src="$bicycle.getImageUrl()" alt="image: $bicycle.getTitle()" width="150rem"></td>-->
+            <!--<td>$bicycle.getUser().getUsername()</td>-->
+            <!--<td>$bicycle.getWheelSize()</td>-->
+            <!--<td>$bicycle.getMinAge()-$bicycle.getMaxAge()</td>-->
+
+            <!--<td><form action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>-->
+            <!--<td><form action="/bicycles/$bicycle.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>-->
+        <!--</tr>-->
+        <!--#end-->
+    <!--</table>-->
+<!--</div>-->
+
+<!--<form action="/bicycles/new">-->
+    <!--<input type="submit" id="create_button" value="Create">-->
+<!--</form>-->

@@ -1,7 +1,6 @@
 <p class="pageHeader">All computer games ($computerGames.size())</p>
 
 
-
 <div class="flex-advert-container">
     #foreach ($computerGame in $computerGames)
 
@@ -27,9 +26,10 @@
 
 
 
-        <div class="buttondiv"><form class="computergame-button" action="/computerGames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+        <div class="buttondiv">
+            <form class="advert-button" action="/computerGames/$computerGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
 
-            <form class="computergame-button" action="/computergames/$computer.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></div>
+            <form class="advert-button" action="/computerGames/$computerGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></div>
 
     </div>
     #end
@@ -88,4 +88,3 @@
 
 <!--<form action="/computergames/new">-->
     <!--<input type="submit" id="create_button" value="Create">-->
-</form>
