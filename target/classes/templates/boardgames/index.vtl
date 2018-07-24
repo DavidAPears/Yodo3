@@ -1,37 +1,74 @@
 <p class="pageHeader">All board games ($boardgames.size())</p>
 
-<div class="container">
+
+<div class="flex-advert-container">
     #if ($boardgames.size() > 0)
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>[image]</th>
-            <th>Seller</th>
-            <th>Game&nbspType</th>
-        </tr>
-        #foreach ($boardGame in $boardgames)
-        <tr>
-            <td><a href="/boardgames/$boardGame.getId()">$boardGame.getTitle()</a></td>
-            <td>$boardGame.getDescription()</td>
-            <td>$boardGame.getPrice()Y</td>
-            <td><a href="/boardgames/$boardGame.getId()"><img src="$boardGame.getImageUrl()" alt="image: $boardGame.getTitle()" height="50rem"></a></td>
-            <td><a href="/users/$boardGame.getUser().getId()">$boardGame.getUser().getUsername()</a></td>
-            <td>$boardGame.getGameType().getName()</td>
-            <td><form action="/boardgames/$boardGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>
-            <td><form action="/boardgames/$boardGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>
-        </tr>
-        #end
-    </table>
+    #foreach ($boardgame in $boardgames)
+
+    <div class="flex-advert" >
+
+        <div class="boardgame-image"><img src="$boardgame.getImageUrl()" alt="Image: $boardgame.getTitle()" width="150rem"></div>
+
+        <div class="title"> $boardgame.getTitle() </div>
+
+        <div class="description"> $boardgame.getDescription() </div>
+
+        <div class="price">Price $boardgame.getPrice()Y</div>
+
+        <div class="user"> User $boardgame.getUser().getUsername()</div>
+
+        <div class="type"> Type $boardgame.getGameType().getName()</div>
+
+        <div class="buttondiv">
+            <form class="advert-button" action="/boardgames/$boardgame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+
+            <form class="advert-button" action="/boardgames/$boardgame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></div>
+
+    </div>
+    #end
     #else
-    <h3>There are currently no board games listed for trade</h3>
+    <h3>There are currently no boardgames listed for trade</h3>
     #end
 </div>
-
-<br>
-<br>
 
 <form action="/boardgames/new">
     <input type="submit" id="create_button" value="Create">
 </form>
+
+
+        <!--Below code in table format-->
+<!--<div class="container">-->
+    <!--#if ($boardgames.size() > 0)-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>Title</th>-->
+            <!--<th>Description</th>-->
+            <!--<th>Price</th>-->
+            <!--<th>[image]</th>-->
+            <!--<th>Seller</th>-->
+            <!--<th>Game&nbspType</th>-->
+        <!--</tr>-->
+        <!--#foreach ($boardGame in $boardgames)-->
+        <!--<tr>-->
+            <!--<td><a href="/boardgames/$boardGame.getId()">$boardGame.getTitle()</a></td>-->
+            <!--<td>$boardGame.getDescription()</td>-->
+            <!--<td>$boardGame.getPrice()Y</td>-->
+            <!--<td><a href="/boardgames/$boardGame.getId()"><img src="$boardGame.getImageUrl()" alt="image: $boardGame.getTitle()" height="50rem"></a></td>-->
+            <!--<td><a href="/users/$boardGame.getUser().getId()">$boardGame.getUser().getUsername()</a></td>-->
+            <!--<td>$boardGame.getGameType().getName()</td>-->
+            <!--<td><form action="/boardgames/$boardGame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form></td>-->
+            <!--<td><form action="/boardgames/$boardGame.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></td>-->
+        <!--</tr>-->
+        <!--#end-->
+    <!--</table>-->
+    <!--#else-->
+    <!--<h3>There are currently no board games listed for trade</h3>-->
+    <!--#end-->
+<!--</div>-->
+
+<!--<br>-->
+<!--<br>-->
+
+<!--<form action="/boardgames/new">-->
+    <!--<input type="submit" id="create_button" value="Create">-->
+<!--</form>-->
