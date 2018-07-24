@@ -1,44 +1,66 @@
 <h1>Edit Advert</h1>
 
 
+<div class="flex-advert-container">
+
+    <div class="flex-advert">
+
+        <div><form action="/adverts/$advert.getId()" method="post"></form></div>
+
+        <div for="image"><img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" width="225rem"></div>
+
+        <div for="title"> Title <input type="inputbox" id="title" name="title" required="true" value="$advert.getTitle()">  </div>
+
+        <div class="description"><input type="inputbox" id="description" name="description" required="true" value="$advert.getDescription()"></div>
+
+        <div class="price"> Price <input type="inputbox" id="price" name="price" required="true" value="$advert.getPrice()"> Y</div>
+
+        <div for="user"> User <input type="inputbox" id="user" name="user" required="true" value="$advert.getUser()"></div>
+
+       <br><input type="submit" id="save_button" value="Submit">
+
+    </div>
+</div>
 
 
-<form action="/adverts/$advert.getId()" method="post">
+    <!--Code below is in table format-->
 
-    <div class="flex_grid_thirds"></div>
+<!--<form action="/adverts/$advert.getId()" method="post">-->
 
-    <div class="title">Title</div>
-    <!--<label for="title">Title</label>-->
-    <input type="inputbox" id="title" name="title" required="true" value="$advert.getTitle()">
+    <!--<div class="flex_grid_thirds"></div>-->
 
-
-    <div class="description">Description</div>
-    <!--<label for="description">Description</label>-->
-    <input type="inputbox" id="description" name="description" required="true" value="$advert.getDescription()">
+    <!--<div class="title">Title</div>-->
+    <!--&lt;!&ndash;<label for="title">Title</label>&ndash;&gt;-->
+    <!--<input type="inputbox" id="title" name="title" required="true" value="$advert.getTitle()">-->
 
 
-    <div class="price">Price</div>
-    <!--<label for="price">Price</label>-->
-    <input type="inputbox" id="price" name="price" required="true" value="$advert.getPrice()">
+    <!--<div class="description">Description</div>-->
+    <!--&lt;!&ndash;<label for="description">Description</label>&ndash;&gt;-->
+    <!--<input type="inputbox" id="description" name="description" required="true" value="$advert.getDescription()">-->
 
 
-    <div class="category">Category</div>
-    <!--<label for="category">Category</label>-->
-    <input type="inputbox" id="category" name="category" required="true" value="$advert.getCategory()">
-
-    <div class="imageUrl">Image URL</div>
-    <!--<label for="imageUrl">imageUrl</label>-->
-    <input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$advert.getImageUrl()">
+    <!--<div class="price">Price</div>-->
+    <!--&lt;!&ndash;<label for="price">Price</label>&ndash;&gt;-->
+    <!--<input type="inputbox" id="price" name="price" required="true" value="$advert.getPrice()">-->
 
 
-    <div class="user">User</div>
-    <!--<label for="user">User</label>-->
-    <input type="inputbox" id="user" name="user" required="true" value="$advert.getUser().getUsername()">
+    <!--<div class="category">Category</div>-->
+    <!--&lt;!&ndash;<label for="category">Category</label>&ndash;&gt;-->
+    <!--<input type="inputbox" id="category" name="category" required="true" value="$advert.getCategory()">-->
+
+    <!--<div class="imageUrl">Image URL</div>-->
+    <!--&lt;!&ndash;<label for="imageUrl">imageUrl</label>&ndash;&gt;-->
+    <!--<input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$advert.getImageUrl()">-->
 
 
-    <input type="submit" value="Save" id="save_button">
+    <!--<div class="user">User</div>-->
+    <!--&lt;!&ndash;<label for="user">User</label>&ndash;&gt;-->
+    <!--<input type="inputbox" id="user" name="user" required="true" value="$advert.getUser().getUsername()">-->
 
 
-</form>
+    <!--<input type="submit" value="Save" id="save_button">-->
+
+
+<!--</form>-->
 
 
