@@ -229,17 +229,13 @@ background-color:#F1E422;
 /* Main CONTAINER for all adverts */
 .flex-advert-container {
   display: flex;
-
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: row;
+  justify-content: flex-start;
   size: 300px;
+  padding: 10px;
   border: 1px solid #C7CBC6;
-  height: 100vh;
-
-
-
-
-}
+  }
 
 /* individual ITEMS(adverts) within container */
 
