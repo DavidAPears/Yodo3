@@ -6,10 +6,10 @@
 
         <div class="advert-image"><img src="$boardGame.getImageUrl()" alt="image: $boardGame.getTitle()" width="200rem"></div>
         <div class="advert-title"> $boardGame.getTitle() </div>
-        <div class="advert-description"> Description: $boardGame.getDescription() </div>
+        <div class="advert-description"> $boardGame.getDescription() </div>
         <div class="advert-price">Price: $boardGame.getPrice()Y</div>
         <div class="game-type">Type: $boardGame.getGameType().getName()</div>
-        <div class="advert-seller"><a href="/users/$boardGame.getUser().getId()">User: $boardGame.getUser().getUsername()</a></div><br>
+        <div class="advert-seller">User: <a href="/users/$boardGame.getUser().getId()">$boardGame.getUser().getUsername()</a></div><br>
 
        <div>
            <form class="advert-button" action="/boardgames/$boardGame.getId()/edit" ><input type="submit" id="edit_button" value="Edit" ></form>
