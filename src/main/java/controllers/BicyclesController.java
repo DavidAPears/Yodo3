@@ -6,7 +6,11 @@ import db.DBUser;
 import db.Seeds;
 import models.Advert;
 import models.Bicycle;
+import models.ComputerGame;
 import models.User;
+import models.enums.AgeClassification;
+import models.enums.Console;
+import models.enums.GameType;
 import org.hibernate.Hibernate;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -62,16 +66,21 @@ public class BicyclesController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-
-//        post("/bicycles", (req, res) -> {
-//            String bicycleName = req.queryParams("bicyclename");
-//            int credit = Integer.valueOf(req.queryParams("credit"));
-//            Bicycle newBicycle = new Bicycle(bicycleName, credit);
-//            DBHelper.save(newBicycle);
-//            res.redirect("/bicycles");
-//            return null;
-//        }, new VelocityTemplateEngine());
-
+        post("/bicycles", (req, res) -> {
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            int price = Integer.valueOf(req.queryParams("price"));
+            String imageUrl = req.queryParams("imageUrl");
+            int userId = Integer.valueOf(req.queryParams("user"));
+            User user = DBUser.find(userId);
+            int wheelSize = Integer.valueOf(req.queryParams("wheelSize"));
+            int minAge = Integer.valueOf(req.queryParams("minAge"));
+            int maxAge = Integer.valueOf(req.queryParams("maxAge"));
+            Bicycle newBicycle = new Bicycle(title, description, price, imageUrl, user, wheelSize, minAge, maxAge);
+            DBHelper.save(newBicycle);
+            res.redirect("/bicycles");
+            return null;
+        }, new VelocityTemplateEngine());
 
 //  To edit bikes:
 
