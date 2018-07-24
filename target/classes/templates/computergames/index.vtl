@@ -10,18 +10,18 @@
 
         <div class="title"> $computerGame.getTitle() </div>
 
-        <div class="description"> Description $computerGame.getDescription() </div>
+        <div class="description"> $computerGame.getDescription() </div>
 
-        <div class="computergame-price">Price $computerGame.getPrice()Y</div>
+        <div class="computergame-price">Price: $computerGame.getPrice()Y</div>
 
-        <div class="user"> User $computerGame.getUser().getUsername()</div>
+        <div class="user"> User: <a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></div>
 
-        <div class="console"> Console $computerGame.getConsole().getName()</div>
+        <div class="console"> Console: $computerGame.getConsole().getName()</div>
 
-        <div class="age-classification"> Age Rating $computerGame.getAgeClassification().getAge()
+        <div class="age-classification"> Age Rating: $computerGame.getAgeClassification().getAge()
         </div>
 
-        <div class="type"> Type $computerGame.getGameType().getName()
+        <div class="type"> Type: $computerGame.getGameType().getName()
         </div>
 
 
