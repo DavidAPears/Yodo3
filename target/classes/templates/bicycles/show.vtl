@@ -4,12 +4,12 @@
     <div class="flex-advert">
 
     <div class="advert-image"><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="280rem"></div>
-    <div class="advert-title"> $bicycle.getTitle() </div>
+    <div class="title">$bicycle.getTitle()</div>
     <div class="advert-price">Price: $bicycle.getPrice()Y</div>
-    <div class="advert-description"> $bicycle.getDescription() </div>
-    <div class="wheel-size"> Wheel Size: $bicycle.getWheelSize() </div>
-    <div class="age-range" > Age Range: $bicycle.getMinAge()-$bicycle.getMaxAge() years</div>
-    <div class="advert-seller"> Seller: $bicycle.getUser().getUsername()</div><br>
+    <div class="advert-description">$bicycle.getDescription()</div>
+    <div class="wheel-size">Wheel size: $bicycle.getWheelSize()"</div>
+    <div class="age-range" >Age range: $bicycle.getMinAge()-$bicycle.getMaxAge() years</div>
+    <div class="advert-seller">Seller: $bicycle.getUser().getUsername()</div><br>
 
         <div>
             <form class="advert-button" action="/bicycles/$bicycle.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
