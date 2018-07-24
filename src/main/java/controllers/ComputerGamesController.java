@@ -32,7 +32,7 @@ public class ComputerGamesController {
             Map<String, Object> model = new HashMap<>();
             model.put("template", "/templates/computergames/index.vtl");
             List<ComputerGame> computerGames = DBHelper.getAll(ComputerGame.class);
-            model.put("computergames", computerGames);
+            model.put("computerGames", computerGames);
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
