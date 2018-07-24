@@ -1,54 +1,34 @@
 
 
-<div class="dropdown">
-    <button class="dropbtn">CREATE NEW ADVERT</button>
-    <div class="dropdown-content">
-        <a href="/computergames/new">ComputerGame</a>
-        <a href="/books/new">Book</a>
-        <a href="/bicycles/new">Bicycle</a>
-        <a href="/boardgames/new">BoardGame</a>
-        <a href="/adverts/new">Other item</a>
-    </div>
-</div>
-<br>
 
 <p class="pageHeader">All Adverts ($adverts.size())</p>
 
 <!--Below puts all adverts in a flexbox-->
 
 <div class="flex-advert-container">
-#foreach ($advert in $adverts)
+    #foreach ($advert in $adverts)
+        <div class="flex-advert">
+            <div>
+                <a href="/adverts/$advert.getId()">
+                    <img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" width="150rem">
+                </a>
+            </div>
 
-<div class="flex-advert" >
+            <div class="title">$advert.getTitle()</div>
 
-<div class="advert-image"><img src="$advert.getImageUrl()" alt="Image: $advert.getTitle()" width="150rem"></div>
+            <div class="advert-description">$advert.getDescription()</div>
 
-<div class="title"> $advert.getTitle() </div>
+            <div class="advert-price">Price: $advert.getPrice()Y</div>
 
-<div class="advert-description"> Description: $advert.getDescription() </div>
-
-<div class="advert-price">Price: $advert.getPrice()Y</div>
-
-<div class="buttondiv">
-<form class="advert-button" action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
-
-<form class="advert-button" action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></div>
-
-</div>
+            <div class="buttondiv">
+                <form class="advert-button" action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
+                <form class="advert-button" action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
+            </div>
+        </div>
     #end
+</div>
 
-    </div>
 
-<br>
-<div class="dropdown">
-    <button class="dropbtn">CREATE NEW ADVERT</button>
-    <div class="dropdown-content">
-        <a href="/computergames/new">ComputerGame</a>
-        <a href="/books/new">Book</a>
-        <a href="/bicycles/new">Bicycle</a>
-        <a href="/boardgames/new">BoardGame</a>
-        <a href="/adverts/new">Other item</a>
-    </div>
 
 
 </div>
