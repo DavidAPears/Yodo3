@@ -17,13 +17,13 @@
         <div class="advert-price">Price <input type="inputbox" id="advert-price" name="price" required="true" value="$computerGame.getPrice()"> Y</div>
 
 
-        <div for="console">Console <select name="console" id="console">
+        <div>Console <select name="console" id="console">
             #foreach ($console in $consoles)
-            #if ($console == $computerGame.getConsole())
-            <option selected value="$console">$console.getName()</option>
-            #else
-            <option value="$console">$console.getName()</option>
-            #end
+                #if ($console == $computerGame.getConsole())
+                    <option selected value="$console">$console.getName()</option>
+                #else
+                    <option value="$console">$console.getName()</option>
+                #end
             #end
         </select></div>
 
