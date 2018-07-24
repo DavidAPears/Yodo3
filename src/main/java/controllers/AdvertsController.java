@@ -9,6 +9,7 @@ import models.BoardGame;
 import models.User;
 import models.enums.Category;
 import models.enums.GameType;
+import org.hibernate.Criteria;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -127,10 +128,6 @@ public class AdvertsController {
             res.redirect("/adverts");
             return null;
         }, new VelocityTemplateEngine());
-
-
-
-
 
 
 
