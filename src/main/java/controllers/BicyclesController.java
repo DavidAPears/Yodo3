@@ -44,6 +44,8 @@ public class BicyclesController {
 
         get("/bicycles/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            List<User> users = DBHelper.getAll(User.class);
+            model.put("users", users);
             model.put("template", "templates/bicycles/create.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());

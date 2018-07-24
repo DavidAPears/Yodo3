@@ -1,36 +1,70 @@
 <h1>New Bicycle</h1>
 
 <form action="/bicycles" method="post">
+    <table>
+        <tr>
+            <td>
 
-    <label for="title">Title</label>
-    <input type="inputbox" id="title" name="title" required="true">
+                <label for="title">Title</label>
+                <input type="inputbox" id="title" name="title" required="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
 
-    <label for="description">Description</label>
-    <input type="inputbox" id="description" name="description" required="true">
+                <label for="description">Description</label>
+                <input type="inputbox" id="description" name="description" required="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
 
-    <label for="price">Price</label>
-    <input type="inputbox" id="price" name="price" required="true">
+                <label for="price">Price</label>
+                <input type="inputbox" id="price" name="price" required="true">
+            </td>
+        </tr>
+        <td>
 
-    <label for="category">Category</label>
-    <input type="inputbox" id="category" name="category" required="true">
+                <label for="imageUrl">imageUrl</label>
+                <input type="inputbox" id="imageUrl" name="imageUrl" required="true">
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="user">User
+                    <select name="user" id="user">
+                        #foreach ($user in $users)
+                        <option value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
+                        #end
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
 
-    <label for="imageUrl">imageUrl</label>
-    <input type="inputbox" id="imageUrl" name="imageUrl" required="true">
+                <label for="wheel-size">Wheel size</label>
+                <input type="inputbox" id="wheel-size" name="user" required="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
 
-    <label for="user">User</label>
-    <input type="inputbox" id="user" name="user" required="true">
+                <label for="min-age">Minimum age</label>
+                <input type="inputbox" id="min-age" name="user" required="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
 
-    <label for="wheel-size"></label>
-    <input type="inputbox" id="wheel-size" name="user" required="true">
-
-    <label for="min-age"></label>
-    <input type="inputbox" id="min-age" name="user" required="true">
-
-    <label for="max-age"></label>
-    <input type="inputbox" id="max-age" name="user" required="true">
-
-
-    <input type="submit" value="Save">
-
-
+                <label for="max-age">Maximum age</label>
+                <input type="inputbox" id="max-age" name="user" required="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Save">
+            </td>
+        </tr>
+    </table>
 </form>
