@@ -7,17 +7,17 @@
 
     <div class="flex-advert" >
 
-        <div class="boardgame-image"><img src="$boardgame.getImageUrl()" alt="Image: $boardgame.getTitle()" width="150rem"></div>
+        <div class="boardgame-image"><a href="/boardgames/$boardgame.getId()"><img src="$boardgame.getImageUrl()" alt="Image: $boardgame.getTitle()" width="150rem"></a></div>
 
         <div class="title"> $boardgame.getTitle() </div>
 
         <div class="description"> $boardgame.getDescription() </div>
 
-        <div class="price">Price $boardgame.getPrice()Y</div>
+        <div class="price">Price: $boardgame.getPrice()Y</div>
 
-        <div class="user"> User $boardgame.getUser().getUsername()</div>
+        <div class="user"> User: <a href="/users/$boardgame.getUser().getId()">$boardgame.getUser().getUsername()</a></div>
 
-        <div class="type"> Type $boardgame.getGameType().getName()</div>
+        <div class="type"> Type: $boardgame.getGameType().getName()</div>
 
         <div class="buttondiv">
             <form class="advert-button" action="/boardgames/$boardgame.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
