@@ -212,6 +212,7 @@ background-color:#F1E422;
   width: 300px;
   display: flex;
   flex-direction: column;
+  margin: 0.8rem;
   }
 }
 
@@ -364,4 +365,11 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
+.title {
+    font-size: 1.2rem;
+    color: black;
+    margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
 }
