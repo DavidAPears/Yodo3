@@ -7,9 +7,9 @@
         <div class="advert-title"> $computerGame.getTitle() </div>
         <div class="advert-description"> $computerGame.getDescription() </div>
         <div class="advert-price">Price: $computerGame.getPrice()Y</div>
-        <div class="advert-seller"> Seller: $computerGame.getUser().getUsername()</div>
-        <div class="console">Console:: $computerGame.getConsole().getName()Y</div>
-        <div class="age"> Player Age: $computerGame.getAgeClassification().getAge()</div>
+        <div class="advert-seller"> Seller: <a href="/users/$computerGame.getUser().getId()">$computerGame.getUser().getUsername()</a></div>
+        <div class="console">Console: $computerGame.getConsole().getName()</div>
+        <div class="age"> Age rating: $computerGame.getAgeClassification().getAge()</div>
         <div class="game-type"> Type: $computerGame.getGameType().getName()</div> <br>
 
     <div>
