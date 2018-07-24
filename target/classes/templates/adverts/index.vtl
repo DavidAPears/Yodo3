@@ -42,21 +42,21 @@
 <div >
 <form class="advert-button" action="/adverts/$advert.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
 
-<form class="advert-button" action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form>
-#end
-</div>
+<form class="advert-button" action="/adverts/$advert.getId()/delete" method="post"><input type="submit" id="delete_button" value="Delete"></form></div>
 
 </div>
+    #end
 
-    <br>
-    <div class="dropdown">
-        <button class="dropbtn">CREATE NEW ADVERT</button>
-        <div class="dropdown-content">
-            <a href="/computergames/new">ComputerGame</a>
-            <a href="/books/new">Book</a>
-            <a href="/bicycles/new">Bicycle</a>
-            <a href="/boardgames/new">BoardGame</a>
-            <a href="/adverts/new">Other item</a>
-        </div>
+    </div>
+
+<br>
+<div class="dropdown">
+    <button class="dropbtn">CREATE NEW ADVERT</button>
+    <div class="dropdown-content">
+        <a href="/computergames/new">ComputerGame</a>
+        <a href="/books/new">Book</a>
+        <a href="/bicycles/new">Bicycle</a>
+        <a href="/boardgames/new">BoardGame</a>
+        <a href="/adverts/new">Other item</a>
     </div>
 

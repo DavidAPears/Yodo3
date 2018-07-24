@@ -1,5 +1,70 @@
 <h1>Edit computer game</h1>
 
+<!--BELOW PUTS ED's CODE IN FLEXBOX FORMAT BOX (David)-->
+
+<div class="flex-advert-container">
+
+    <div class="flex-advert">
+
+        <div><form action="/computergames/$computerGame.getId()" method="post"></form></div>
+
+        <div class="advert-image"><img src="$computerGame.getImageUrl()" alt="Image: $computerGame.getTitle()" width="225rem"></div>
+
+        <div class="advert-title"> Title <input type="inputbox" id="advert-title" name="title" required="true" value="$computerGame.getTitle()">  </div>
+
+        <div class="advert-description">Description <input type="inputbox" id="advert-description" name="description" required="true" value="$computerGame.getDescription()"></div>
+
+        <div class="advert-price">Price <input type="inputbox" id="advert-price" name="price" required="true" value="$computerGame.getPrice()"> Y</div>
+
+
+        <div for="console">Console <select name="console" id="console">
+            #foreach ($console in $consoles)
+            #if ($console == $computerGame.getConsole())
+            <option selected value="$console">$console.getName()</option>
+            #else
+            <option value="$console">$console.getName()</option>
+            #end
+            #end
+        </select></div>
+
+
+        <div for ="seller"> User <select name="user" id="user">
+            #foreach ($user in $users)
+            #if ($user.getId() == $computerGame.getUser().getId())
+            <option selected value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
+            #else
+            <option value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
+            #end
+            #end
+        </select></div>
+
+        <div for="ageClassification"> Age Classification <select name="ageClassification" id="ageClassification">
+            #foreach ($ageClassification in $ageClassifications)
+            #if ($ageClassification == $computerGame.getAgeClassification())
+            <option selected value="$ageClassification">$ageClassification.getAge()</option>
+            #else
+            <option value="$ageClassification">$ageClassification.getAge()</option>
+            #end
+            #end
+        </select></div>
+
+        <div for="gameType"> Game Type <select name="gameType" id="gameType">
+            #foreach ($gameType in $gameTypes)
+            #if ($gameType == $computerGame.getGameType())
+            <option selected value="$gameType">$gameType.getName()</option>
+            #else
+            <option value="$gameType">$gameType.getName()</option>
+            #end
+            #end
+        </select></div>
+        <input type="submit" id="save_button" value="Submit">
+    </div>
+</div>
+
+
+
+<!--Ed's ORIGINAL CODE (David)-->
+
 <!--<form action="/computergames/$computerGame.getId()" method="post">-->
     <!--<table>-->
         <!--<tr>-->
@@ -101,69 +166,6 @@
 
 
 
-
-
-
-<!--ATTEMPT TO PUT THIS IN FLEX BOX-->
-
-<div class="flex-advert-container">
-
-    <div class="flex-advert">
-
-        <div><form action="/computergames/$computerGame.getId()" method="post"></form></div>
-
-        <div class="advert-image"><img src="$computerGame.getImageUrl()" alt="Image: $computerGame.getTitle()" width="225rem"></div>
-
-        <div class="advert-title"> Title <input type="inputbox" id="advert-title" name="title" required="true" value="$computerGame.getTitle()">  </div>
-
-        <div class="advert-description">Description <input type="inputbox" id="advert-description" name="description" required="true" value="$computerGame.getDescription()" </div>
-
-        <div class="advert-price">Price <input type="inputbox" id="advert-price" name="price" required="true" value="$computerGame.getPrice()"> Y</div>
-
-
-        <div for="console">Console <select name="console" id="console">
-            #foreach ($console in $consoles)
-            #if ($console == $computerGame.getConsole())
-            <option selected value="$console">$console.getName()</option>
-            #else
-            <option value="$console">$console.getName()</option>
-            #end
-            #end
-        </select></div>
-
-
-        <div for ="seller"> User <select name="user" id="user">
-            #foreach ($user in $users)
-            #if ($user.getId() == $computerGame.getUser().getId())
-            <option selected value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
-            #else
-            <option value="$user.getId()">$user.getUsername() | user id: $user.getId()</option>
-            #end
-            #end
-        </select></div>
-
-        <div for="ageClassification"> Age Classification <select name="ageClassification" id="ageClassification">
-                #foreach ($ageClassification in $ageClassifications)
-                #if ($ageClassification == $computerGame.getAgeClassification())
-                <option selected value="$ageClassification">$ageClassification.getAge()</option>
-                #else
-                <option value="$ageClassification">$ageClassification.getAge()</option>
-                #end
-                #end
-        </select></div>
-
-        <div for="gameType"> Game Type <select name="gameType" id="gameType">
-                #foreach ($gameType in $gameTypes)
-                #if ($gameType == $computerGame.getGameType())
-                <option selected value="$gameType">$gameType.getName()</option>
-                #else
-                <option value="$gameType">$gameType.getName()</option>
-                #end
-                #end
-        </select></div>
-
-    </div>
-</div>
 
 
 

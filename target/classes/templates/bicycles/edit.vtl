@@ -1,37 +1,79 @@
 <h1>Edit Bicycle</h1>
 
-<form action="/bicycles/$bicycle.getId()" method="post">
+<!--BELOW PUTS ED's CODE IN FLEXBOX FORMAT BOX (David)-->
 
-    <label for="title">Title</label>
-    <input type="inputbox" id="title" name="title" required="true" value="$bicycle.getTitle()">
+<div class="flex-advert-container">
 
-    <label for="description">Description</label>
-    <input type="inputbox" id="description" name="description" required="true" value="$bicycle.getDescription()">
+    <div class="flex-advert">
 
-    <label for="price">Price</label>
-    <input type="inputbox" id="price" name="price" required="true" value="$bicycle.getPrice()">
+        <div><form action="/bicycles/$bicycle.getId()" method="post"></form></div>
 
-    <label for="category">Category</label>
-    <input type="inputbox" id="category" name="category" required="true" value="$bicycle.getCategory()">
+        <div for="bcycle-image"><img src="$bicycle.getImageUrl()" alt="Image: $bicycle.getTitle()" width="225rem"></div>
 
-    <label for="imageUrl">imageUrl</label>
-    <input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$bicycle.getImageUrl()">
+        <div for="bicycle-title"> Title <input type="inputbox" id="bicycle-title" name="title" required="true" value="$bicycle.getTitle()">  </div>
 
-    <label for="user">User</label>
-    <input type="inputbox" id="user" name="user" required="true" value="$bicycle.getUser()">
+    <div class="advert-description">Description <input type="inputbox" id="advert-description" name="description" required="true" value="$bicycle.getDescription()"></div>
 
-    <label for="wheel-size">Wheel Size</label>
-    <input type="inputbox" id="wheel-size" name="wheel-size" required="true" value="$bicycle.getWheelSize()">
+        <div class="advert-price"> Price <input type="inputbox" id="advert-price" name="price" required="true" value="$bicycle.getPrice()"> Y</div>
 
-    <label for="min-age">Minimum Age</label>
-    <input type="inputbox" id="min-age" name="min-age" required="true" value="$bicycle.getMinAge()">
+        <div for="user"> User <input type="inputbox" id="user" name="user" required="true" value="$bicycle.getUser()"></div>
 
-    <label for="max-age">Maximum Age</label>
-    <input type="inputbox" id="max-age" name="max-age" required="true" value="$bicycle.getMaxAge()">
+        <div for="wheel-size"> Wheel Size <input type="inputbox" id="wheel-size" name="wheel-size" required="true" value="$bicycle.getWheelSize()"></div>
 
+        <div for="min-age"> Minimum Age <input type="inputbox" id="min-age" name="min-age" required="true" value="$bicycle.getMinAge()"></div>
 
-    <input type="submit" id="save_button" value="Submit">
+        <div for="max-age"> Maximum Age <input type="inputbox" id="max-age" name="max-age" required="true" value="$bicycle.getMaxAge()"></div>
+
+        <input type="submit" id="save_button" value="Submit">
+
+    </div>
+</div>
 
 
 
-</form>
+
+
+
+
+
+
+
+
+
+
+
+<!--Ed's ORIGINAL CODE (David)-->
+
+
+<!--<form action="/bicycles/$bicycle.getId()" method="post">-->
+
+    <!--<label for="title">Title</label>-->
+    <!--<input type="inputbox" id="title" name="title" required="true" value="$bicycle.getTitle()">-->
+
+    <!--<label for="description">Description</label>-->
+    <!--<input type="inputbox" id="description" name="description" required="true" value="$bicycle.getDescription()">-->
+
+    <!--<label for="price">Price</label>-->
+    <!--<input type="inputbox" id="price" name="price" required="true" value="$bicycle.getPrice()">-->
+
+    <!--<label for="category">Category</label>-->
+    <!--<input type="inputbox" id="category" name="category" required="true" value="$bicycle.getCategory()">-->
+
+    <!--<label for="imageUrl">imageUrl</label>-->
+    <!--<input type="inputbox" id="imageUrl" name="imageUrl" required="true" value="$bicycle.getImageUrl()">-->
+
+    <!--<label for="user">User</label>-->
+    <!--<input type="inputbox" id="user" name="user" required="true" value="$bicycle.getUser()">-->
+
+    <!--<label for="wheel-size">Wheel Size</label>-->
+    <!--<input type="inputbox" id="wheel-size" name="wheel-size" required="true" value="$bicycle.getWheelSize()">-->
+
+    <!--<label for="min-age">Minimum Age</label>-->
+    <!--<input type="inputbox" id="min-age" name="min-age" required="true" value="$bicycle.getMinAge()">-->
+
+    <!--<label for="max-age">Maximum Age</label>-->
+    <!--<input type="inputbox" id="max-age" name="max-age" required="true" value="$bicycle.getMaxAge()">-->
+
+
+<!--<input type="submit" id="save_button" value="Submit">-->
+
