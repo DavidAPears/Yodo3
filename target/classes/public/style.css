@@ -370,6 +370,10 @@ span.psw {
 .title {
     font-size: 1.2rem;
     color: black;
-    margin-top: 0.4rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+div {
+margin-top: 0.4rem;
+margin-bottom: 0.4rem;
 }
