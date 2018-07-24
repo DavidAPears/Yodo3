@@ -11,15 +11,15 @@
 
         <div class="title"> $book.getTitle() </div>
 
-        <div class="description"> Description $book.getDescription() </div>
+        <div class="description"> $book.getDescription() </div>
 
-        <div class="price">Price $book.getPrice()Y</div>
+        <div class="price">Price: $book.getPrice()Y</div>
 
-        <div class="user"> User $book.getUser().getUsername()</div>
+        <div class="user"> User: <a href="/users/$book.getUser().getId()">$book.getUser().getUsername()</a></div>
 
-        <div class="genre"> Genre $book.getGenre().getName()</div>
+        <div class="genre"> Genre: $book.getGenre().getName()</div>
 
-        <div class="format"> Format $book.getFormat().getName()</div>
+        <div class="format"> Format: $book.getFormat().getName()</div>
 
         <div class="buttondiv">
             <form class="advert-button" action="/books/$book.getId()/edit"><input type="submit" id="edit_button" value="Edit"></form>
